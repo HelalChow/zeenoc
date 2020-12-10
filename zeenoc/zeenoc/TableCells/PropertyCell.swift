@@ -9,15 +9,17 @@ import UIKit
 
 class PropertyCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var rentLabel: UILabel!
+    @IBOutlet weak var deadlineLabel: UILabel!
+    
+    
+    func setProperty(tenantName: String, address: String, rentAmount: String, deadline: String){
+        nameLabel.text = tenantName
+        addressLabel.text = address
+        rentLabel.text = rentAmount
+        deadlineLabel.text = deadline
     }
     
 }
