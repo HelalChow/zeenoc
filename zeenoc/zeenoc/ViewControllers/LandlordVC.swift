@@ -19,13 +19,16 @@ class LandlordVC: UIViewController {
         super.viewDidLoad()
         properties.append(house1)
         properties.append(house2)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
 }
 extension LandlordVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! PropertyCell
-
+        
     }
 }
 
