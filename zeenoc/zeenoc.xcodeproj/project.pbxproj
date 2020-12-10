@@ -3,18 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1B61ED2B2581B86A00E259ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED2A2581B86A00E259ED /* AppDelegate.swift */; };
 		1B61ED2D2581B86A00E259ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED2C2581B86A00E259ED /* SceneDelegate.swift */; };
-		1B61ED2F2581B86A00E259ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED2E2581B86A00E259ED /* ViewController.swift */; };
 		1B61ED322581B86A00E259ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B61ED302581B86A00E259ED /* Main.storyboard */; };
 		1B61ED342581B86E00E259ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B61ED332581B86E00E259ED /* Assets.xcassets */; };
 		1B61ED372581B86E00E259ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B61ED352581B86E00E259ED /* LaunchScreen.storyboard */; };
 		1B61ED422581B86E00E259ED /* zeenocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED412581B86E00E259ED /* zeenocTests.swift */; };
 		1B61ED4D2581B86E00E259ED /* zeenocUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED4C2581B86E00E259ED /* zeenocUITests.swift */; };
+		1B61ED7A2581C90D00E259ED /* LandlordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED792581C90D00E259ED /* LandlordVC.swift */; };
+		1B61ED852581C99B00E259ED /* PropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED832581C99B00E259ED /* PropertyCell.swift */; };
+		1B61ED862581C99B00E259ED /* PropertyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B61ED842581C99B00E259ED /* PropertyCell.xib */; };
 		3EAC0D60751994F2AC967C81 /* Pods_zeenoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F024B803A25D44ACAC6165 /* Pods_zeenoc.framework */; };
 		90E05756ABD1773CA6E9D1AB /* Pods_zeenocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC8135C5E3C87905C117F92 /* Pods_zeenocTests.framework */; };
 		D8278CD6355E3A70D13092B9 /* Pods_zeenoc_zeenocUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0C798B9DB16D8F43A5C8BF /* Pods_zeenoc_zeenocUITests.framework */; };
@@ -41,7 +43,6 @@
 		1B61ED272581B86A00E259ED /* zeenoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zeenoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B61ED2A2581B86A00E259ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B61ED2C2581B86A00E259ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1B61ED2E2581B86A00E259ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1B61ED312581B86A00E259ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B61ED332581B86E00E259ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B61ED362581B86E00E259ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +53,9 @@
 		1B61ED482581B86E00E259ED /* zeenocUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zeenocUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B61ED4C2581B86E00E259ED /* zeenocUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zeenocUITests.swift; sourceTree = "<group>"; };
 		1B61ED4E2581B86E00E259ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B61ED792581C90D00E259ED /* LandlordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandlordVC.swift; sourceTree = "<group>"; };
+		1B61ED832581C99B00E259ED /* PropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyCell.swift; sourceTree = "<group>"; };
+		1B61ED842581C99B00E259ED /* PropertyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyCell.xib; sourceTree = "<group>"; };
 		31F024B803A25D44ACAC6165 /* Pods_zeenoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeenoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38855CC09648DB65769C0866 /* Pods-zeenocTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeenocTests.debug.xcconfig"; path = "Target Support Files/Pods-zeenocTests/Pods-zeenocTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DC8135C5E3C87905C117F92 /* Pods_zeenocTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeenocTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,9 +120,10 @@
 		1B61ED292581B86A00E259ED /* zeenoc */ = {
 			isa = PBXGroup;
 			children = (
+				1B61ED822581C96C00E259ED /* TableCells */,
+				1B61ED7E2581C94900E259ED /* ViewControllers */,
 				1B61ED2A2581B86A00E259ED /* AppDelegate.swift */,
 				1B61ED2C2581B86A00E259ED /* SceneDelegate.swift */,
-				1B61ED2E2581B86A00E259ED /* ViewController.swift */,
 				1B61ED302581B86A00E259ED /* Main.storyboard */,
 				1B61ED332581B86E00E259ED /* Assets.xcassets */,
 				1B61ED352581B86E00E259ED /* LaunchScreen.storyboard */,
@@ -145,6 +150,23 @@
 			path = zeenocUITests;
 			sourceTree = "<group>";
 		};
+		1B61ED7E2581C94900E259ED /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B61ED792581C90D00E259ED /* LandlordVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1B61ED822581C96C00E259ED /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				1B61ED832581C99B00E259ED /* PropertyCell.swift */,
+				1B61ED842581C99B00E259ED /* PropertyCell.xib */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
 		A9A7A9B28ED1ED2D97854A34 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +177,6 @@
 				38855CC09648DB65769C0866 /* Pods-zeenocTests.debug.xcconfig */,
 				CA3B2FC4AE818EF4B7465185 /* Pods-zeenocTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -279,6 +300,7 @@
 			files = (
 				1B61ED372581B86E00E259ED /* LaunchScreen.storyboard in Resources */,
 				1B61ED342581B86E00E259ED /* Assets.xcassets in Resources */,
+				1B61ED862581C99B00E259ED /* PropertyCell.xib in Resources */,
 				1B61ED322581B86A00E259ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,8 +429,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B61ED2F2581B86A00E259ED /* ViewController.swift in Sources */,
+				1B61ED7A2581C90D00E259ED /* LandlordVC.swift in Sources */,
 				1B61ED2B2581B86A00E259ED /* AppDelegate.swift in Sources */,
+				1B61ED852581C99B00E259ED /* PropertyCell.swift in Sources */,
 				1B61ED2D2581B86A00E259ED /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
