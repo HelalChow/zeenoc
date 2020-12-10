@@ -1,0 +1,6 @@
+framework module Pods_zeenocTests {
+  umbrella header "Pods-zeenocTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
