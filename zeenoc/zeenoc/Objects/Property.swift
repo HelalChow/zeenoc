@@ -8,9 +8,10 @@
 import Foundation
 
 struct Property {
-    let tenantName: String
-    let address: String
-    let deadline: String
-    let rent: String
+    var id: String
+    var tenantName: String
+    var address: String
+    var deadline: String
+    var rent: String
 }
 

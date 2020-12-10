@@ -6,22 +6,47 @@
 //
 
 import UIKit
+import Firebase
+
+var properties = [Property]()
 
 class LandlordVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var properties = [Property]()
-    let house1 = Property(tenantName: "Amy White", address: "9419 Linden Blvd Ozone Park NY 11417", deadline: "12/15/2020", rent: "$2000")
-    let house2 = Property(tenantName: "Samantha Brown", address: "8218 9th Ave Elmont NY 11635", deadline: "12/19/2020", rent: "$1800")
+    let house1 = Property(id: "12345", tenantName: "Amy White", address: "9419 Linden Blvd Ozone Park NY 11417", deadline: "12/15/2020", rent: "$2000")
+    let house2 = Property(id: "6789", tenantName: "Samantha Brown", address: "8218 9th Ave Elmont NY 11635", deadline: "12/19/2020", rent: "$1800")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        properties.append(house1)
-        properties.append(house2)
-        
+        firebaseCall()
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func firebaseCall() {
+        let uid = Auth.auth().currentUser?.uid
+        let db = Firestore.firestore()
+        db.collection("landlords").document("qgzC3W8vCEIPt7hfcHsQ").collection("properties").getDocuments() { (snap, err) in
+//            if err != nil {
+//                return
+//            }
+            if let err = err {
+                print("error getting documents")
+            }
+            else{
+                for property in snap!.documents {
+                    print("fdeferf")
+                    let id = property.documentID
+                    let name = property.get("tenantName") as! String
+                    let address = property.get("address") as! String
+                    let deadline = property.get("deadline") as! String
+                    let rent = property.get("tenantName") as! String
+                    
+                    properties.append(Property(id: id, tenantName: name, address: address, deadline: "12/" + deadline + "/2020", rent: "$" + rent))
+                }
+            }
+        }
     }
     
 }
