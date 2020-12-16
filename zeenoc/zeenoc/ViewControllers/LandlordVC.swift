@@ -19,37 +19,78 @@ class LandlordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firebaseCall()
+        let anonymousFunction = { (propertyList: [Property]) in
+            properties = propertyList
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        firebaseCall(completion: anonymousFunction)
+        
+        print("test")
+        print(properties)
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
-    func firebaseCall() {
+    func firebaseCall(completion:@escaping([Property])->()) {
         let uid = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
-        db.collection("landlords").document("qgzC3W8vCEIPt7hfcHsQ").collection("properties").getDocuments() { (snap, err) in
-//            if err != nil {
-//                return
-//            }
-            if let err = err {
-                print("error getting documents")
+        db.collection("landlords").document("qgzC3W8vCEIPt7hfcHsQ").collection("properties").order(by: "deadline", descending: false).addSnapshotListener { (snap, err) in
+            if err != nil {
+                return
             }
-            else{
-                for property in snap!.documents {
-                    print("fdeferf")
-                    let id = property.documentID
-                    let name = property.get("tenantName") as! String
-                    let address = property.get("address") as! String
-                    let deadline = property.get("deadline") as! String
-                    let rent = property.get("tenantName") as! String
-                    
-                    properties.append(Property(id: id, tenantName: name, address: address, deadline: "12/" + deadline + "/2020", rent: "$" + rent))
+            if snap!.documentChanges.isEmpty {
+                return
+            }
+            for property in snap!.documentChanges {
+                if property.type == .added {
+                    let id = property.document.documentID
+                    let name = property.document.get("tenantName") as! String
+                    let address = property.document.get("address") as! String
+                    let deadline = property.document.get("deadline") as! String
+                    let rent = property.document.get("rent") as! Int
+
+                    properties.append(Property(id: id, tenantName: name, address: address, deadline: "12/" + deadline + "/2020", rent: "$" + String(rent)))
+                    DispatchQueue.main.async {
+                        completion(properties)
+                    }
                 }
+                if property.type == .modified {
+                    //when modified
+                    let id = property.document.documentID
+                    let name = property.document.get("tenantName") as! String
+                    let address = property.document.get("address") as! String
+                    let deadline = property.document.get("deadline") as! String
+                    let rent = property.document.get("rent") as! Int
+                    for i in 0..<properties.count {
+                        if properties[i].id == id {
+                            properties[i].deadline = deadline
+                            properties[i].rent = String(rent)
+                        }
+                    }
+                }
+                if property.type == .removed {
+                    //when removed
+                    let id = property.document.documentID
+                    for i in 0..<properties.count {
+                        if properties[i].id == id {
+                            properties.remove(at: i)
+                            if properties.isEmpty {
+
+                            }
+                            return
+                        }
+                    }
+                }
+
             }
         }
     }
     
 }
+
 extension LandlordVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! PropertyCell
@@ -59,6 +100,8 @@ extension LandlordVC: UITableViewDelegate{
 
 extension LandlordVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("")
+        print(properties.count)
         return properties.count
     }
 
@@ -72,6 +115,8 @@ extension LandlordVC: UITableViewDataSource{
         let deadline = properties[indexPath.row].deadline
         let rent = properties[indexPath.row].rent
         cell.setProperty(tenantName: name, address: address, rentAmount: rent, deadline: deadline)
+        print("")
+        print(cell)
         return cell
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B083D4B258953C300AB8DAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B083D4A258953C300AB8DAC /* GoogleService-Info.plist */; };
 		1B61ED2B2581B86A00E259ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED2A2581B86A00E259ED /* AppDelegate.swift */; };
 		1B61ED2D2581B86A00E259ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED2C2581B86A00E259ED /* SceneDelegate.swift */; };
 		1B61ED322581B86A00E259ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B61ED302581B86A00E259ED /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B083D4A258953C300AB8DAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B61ED272581B86A00E259ED /* zeenoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zeenoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B61ED2A2581B86A00E259ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B61ED2C2581B86A00E259ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		1B61ED292581B86A00E259ED /* zeenoc */ = {
 			isa = PBXGroup;
 			children = (
+				1B083D4A258953C300AB8DAC /* GoogleService-Info.plist */,
 				1B61EDBC2581D22400E259ED /* Objects */,
 				1B61ED822581C96C00E259ED /* TableCells */,
 				1B61ED7E2581C94900E259ED /* ViewControllers */,
@@ -311,6 +314,7 @@
 			files = (
 				1B61ED372581B86E00E259ED /* LaunchScreen.storyboard in Resources */,
 				1B61ED342581B86E00E259ED /* Assets.xcassets in Resources */,
+				1B083D4B258953C300AB8DAC /* GoogleService-Info.plist in Resources */,
 				1B61ED862581C99B00E259ED /* PropertyCell.xib in Resources */,
 				1B61ED322581B86A00E259ED /* Main.storyboard in Resources */,
 			);
