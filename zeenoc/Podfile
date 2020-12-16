@@ -10,6 +10,8 @@ target 'zeenoc' do
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Auth'
 	pod 'GoogleDataTransport', '5.0.0'
+	pod 'Charts'
+	pod 'TinyConstraints'
 
   target 'zeenocTests' do
     inherit! :search_paths
