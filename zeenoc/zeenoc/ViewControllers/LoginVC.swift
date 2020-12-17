@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class LoginVC: UIViewController {
 
@@ -30,6 +32,22 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginTapped(_ sender: Any) {
+        let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if error != nil {
+                self.errorLabel.text = error!.localizedDescription
+                self.errorLabel.alpha = 1
+            } else {
+                let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.landlordVC) as? LandlordVC
+                self.view.window?.rootViewController = homeViewController
+                self.view.window?.makeKeyAndVisible()
+            }
+        }
+        
+        let db = Firestore.firestore()
     }
+    
     
 }
