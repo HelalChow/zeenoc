@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="KGk-i7-Jjw" customClass="PropertyCell" customModule="zeenoc" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PropertyCell" customModule="zeenoc" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="382" height="93"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -17,25 +17,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tenant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhR-En-aed">
-                        <rect key="frame" x="20" y="15" width="108" height="21"/>
+                        <rect key="frame" x="20" y="10" width="108" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Property Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbQ-qU-6Uu">
-                        <rect key="frame" x="20" y="52" width="103.5" height="15"/>
+                        <rect key="frame" x="20" y="57" width="103.5" height="15"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rent Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dg-dd-OGJ">
-                        <rect key="frame" x="255.5" y="15" width="106.5" height="21"/>
+                        <rect key="frame" x="255.5" y="10" width="106.5" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Deadline" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgT-Lh-0Lm">
-                        <rect key="frame" x="260" y="52" width="102" height="15"/>
+                        <rect key="frame" x="260" y="57" width="102" height="15"/>
                         <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -43,13 +43,13 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="OgT-Lh-0Lm" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ZsX-x6-fPW"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="OgT-Lh-0Lm" secondAttribute="bottom" constant="15" id="aVt-Xh-3UO"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="OgT-Lh-0Lm" secondAttribute="bottom" constant="10" id="aVt-Xh-3UO"/>
                     <constraint firstItem="rbQ-qU-6Uu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fxI-10-xaU"/>
-                    <constraint firstItem="2Dg-dd-OGJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="icq-iw-Av3"/>
-                    <constraint firstItem="mhR-En-aed" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="jTf-lp-Eu2"/>
+                    <constraint firstItem="2Dg-dd-OGJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="icq-iw-Av3"/>
+                    <constraint firstItem="mhR-En-aed" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="jTf-lp-Eu2"/>
                     <constraint firstAttribute="trailing" secondItem="2Dg-dd-OGJ" secondAttribute="trailing" constant="20" symbolic="YES" id="qBF-0Z-NX9"/>
                     <constraint firstItem="mhR-En-aed" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="rzy-tj-Azd"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="rbQ-qU-6Uu" secondAttribute="bottom" constant="15" id="u4y-Hf-2br"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="rbQ-qU-6Uu" secondAttribute="bottom" constant="10" id="u4y-Hf-2br"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
