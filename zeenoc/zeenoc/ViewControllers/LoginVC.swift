@@ -18,6 +18,15 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupElements()
+    }
+    
+    func setupElements() {
+        errorLabel.alpha = 0
+        
+        Utilities.styleTextField(emailTextField)
+        Utilities.styleTextField(passwordTextField)
+        Utilities.styleFilledButton(loginButton)
     }
     
     @IBAction func loginTapped(_ sender: Any) {

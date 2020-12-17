@@ -10,6 +10,7 @@
 		1B083D4B258953C300AB8DAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B083D4A258953C300AB8DAC /* GoogleService-Info.plist */; };
 		1B083D8B258BF77200AB8DAC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B083D8A258BF77200AB8DAC /* LoginVC.swift */; };
 		1B083D90258BF78200AB8DAC /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B083D8F258BF78200AB8DAC /* SignUpVC.swift */; };
+		1B265A78258C0184009DCB4E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B265A77258C0184009DCB4E /* Utilities.swift */; };
 		1B61ED2B2581B86A00E259ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED2A2581B86A00E259ED /* AppDelegate.swift */; };
 		1B61ED2D2581B86A00E259ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED2C2581B86A00E259ED /* SceneDelegate.swift */; };
 		1B61ED322581B86A00E259ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B61ED302581B86A00E259ED /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		1B61ED852581C99B00E259ED /* PropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED832581C99B00E259ED /* PropertyCell.swift */; };
 		1B61ED862581C99B00E259ED /* PropertyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B61ED842581C99B00E259ED /* PropertyCell.xib */; };
 		1B61EDBE2581D23000E259ED /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61EDBD2581D23000E259ED /* Property.swift */; };
+		1B80E1EE258C03B500E96051 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1ED258C03B500E96051 /* StartVC.swift */; };
 		3EAC0D60751994F2AC967C81 /* Pods_zeenoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F024B803A25D44ACAC6165 /* Pods_zeenoc.framework */; };
 		90E05756ABD1773CA6E9D1AB /* Pods_zeenocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC8135C5E3C87905C117F92 /* Pods_zeenocTests.framework */; };
 		D8278CD6355E3A70D13092B9 /* Pods_zeenoc_zeenocUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0C798B9DB16D8F43A5C8BF /* Pods_zeenoc_zeenocUITests.framework */; };
@@ -47,6 +49,7 @@
 		1B083D4A258953C300AB8DAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B083D8A258BF77200AB8DAC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		1B083D8F258BF78200AB8DAC /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		1B265A77258C0184009DCB4E /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		1B61ED272581B86A00E259ED /* zeenoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zeenoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B61ED2A2581B86A00E259ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B61ED2C2581B86A00E259ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		1B61ED832581C99B00E259ED /* PropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyCell.swift; sourceTree = "<group>"; };
 		1B61ED842581C99B00E259ED /* PropertyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyCell.xib; sourceTree = "<group>"; };
 		1B61EDBD2581D23000E259ED /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		1B80E1ED258C03B500E96051 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		31F024B803A25D44ACAC6165 /* Pods_zeenoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeenoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38855CC09648DB65769C0866 /* Pods-zeenocTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeenocTests.debug.xcconfig"; path = "Target Support Files/Pods-zeenocTests/Pods-zeenocTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DC8135C5E3C87905C117F92 /* Pods_zeenocTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeenocTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B265A7C258C018F009DCB4E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1B265A77258C0184009DCB4E /* Utilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		1B61ED1E2581B86A00E259ED = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				1B083D4A258953C300AB8DAC /* GoogleService-Info.plist */,
+				1B265A7C258C018F009DCB4E /* Helpers */,
 				1B61EDBC2581D22400E259ED /* Objects */,
 				1B61ED822581C96C00E259ED /* TableCells */,
 				1B61ED7E2581C94900E259ED /* ViewControllers */,
@@ -166,6 +179,7 @@
 				1B61ED792581C90D00E259ED /* LandlordVC.swift */,
 				1B083D8A258BF77200AB8DAC /* LoginVC.swift */,
 				1B083D8F258BF78200AB8DAC /* SignUpVC.swift */,
+				1B80E1ED258C03B500E96051 /* StartVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -456,7 +470,9 @@
 				1B083D8B258BF77200AB8DAC /* LoginVC.swift in Sources */,
 				1B61ED2B2581B86A00E259ED /* AppDelegate.swift in Sources */,
 				1B61ED852581C99B00E259ED /* PropertyCell.swift in Sources */,
+				1B265A78258C0184009DCB4E /* Utilities.swift in Sources */,
 				1B61ED2D2581B86A00E259ED /* SceneDelegate.swift in Sources */,
+				1B80E1EE258C03B500E96051 /* StartVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

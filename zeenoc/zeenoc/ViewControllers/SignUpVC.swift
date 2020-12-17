@@ -20,7 +20,19 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupElements()
+    }
+    
+    func setupElements() {
+        errorLabel.alpha = 0
+        
+        Utilities.styleTextField(firstNameTextField)
+        Utilities.styleTextField(lastNameTextField)
+        Utilities.styleTextField(emailTextField)
+        Utilities.styleTextField(passwordTextField)
+        Utilities.styleFilledButton(signUpButton)
+        
     }
     
     @IBAction func signUpTapped(_ sender: Any) {
