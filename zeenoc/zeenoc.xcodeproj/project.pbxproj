@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1B083D4B258953C300AB8DAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B083D4A258953C300AB8DAC /* GoogleService-Info.plist */; };
+		1B083D8B258BF77200AB8DAC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B083D8A258BF77200AB8DAC /* LoginVC.swift */; };
+		1B083D90258BF78200AB8DAC /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B083D8F258BF78200AB8DAC /* SignUpVC.swift */; };
 		1B61ED2B2581B86A00E259ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED2A2581B86A00E259ED /* AppDelegate.swift */; };
 		1B61ED2D2581B86A00E259ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED2C2581B86A00E259ED /* SceneDelegate.swift */; };
 		1B61ED322581B86A00E259ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B61ED302581B86A00E259ED /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		1B083D4A258953C300AB8DAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1B083D8A258BF77200AB8DAC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		1B083D8F258BF78200AB8DAC /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		1B61ED272581B86A00E259ED /* zeenoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zeenoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B61ED2A2581B86A00E259ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B61ED2C2581B86A00E259ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				1B61ED792581C90D00E259ED /* LandlordVC.swift */,
+				1B083D8A258BF77200AB8DAC /* LoginVC.swift */,
+				1B083D8F258BF78200AB8DAC /* SignUpVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -444,8 +450,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B083D90258BF78200AB8DAC /* SignUpVC.swift in Sources */,
 				1B61EDBE2581D23000E259ED /* Property.swift in Sources */,
 				1B61ED7A2581C90D00E259ED /* LandlordVC.swift in Sources */,
+				1B083D8B258BF77200AB8DAC /* LoginVC.swift in Sources */,
 				1B61ED2B2581B86A00E259ED /* AppDelegate.swift in Sources */,
 				1B61ED852581C99B00E259ED /* PropertyCell.swift in Sources */,
 				1B61ED2D2581B86A00E259ED /* SceneDelegate.swift in Sources */,
