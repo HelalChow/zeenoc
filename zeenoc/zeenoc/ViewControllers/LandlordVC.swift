@@ -41,7 +41,7 @@ class LandlordVC: UIViewController {
         pieChart.chartDescription?.text = ""
         
         onTimeDataEntry.value = onTimeStepper.value
-        onTimeDataEntry.label = "On Time"
+        onTimeDataEntry.label = "Recieved"
         missedDataEntry.value = missedStepper.value
         missedDataEntry.label = "Missed"
         lateDataEntry.value = lateStepper.value
@@ -51,11 +51,17 @@ class LandlordVC: UIViewController {
         updateChartData()
     }
     
-    @IBAction func changeOnTime(_ sender: Any) {
+    @IBAction func changeOnTime(_ sender: UIStepper) {
+        onTimeDataEntry.value = sender.value
+        updateChartData()
     }
-    @IBAction func changeMissed(_ sender: Any) {
+    @IBAction func changeMissed(_ sender: UIStepper) {
+        missedDataEntry.value = sender.value
+        updateChartData()
     }
-    @IBAction func changeLate(_ sender: Any) {
+    @IBAction func changeLate(_ sender: UIStepper) {
+        lateDataEntry.value = sender.value
+        updateChartData()
     }
     
     func updateChartData() {
