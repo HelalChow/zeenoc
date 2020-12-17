@@ -41,8 +41,14 @@ class LandlordVC: UIViewController {
         pieChart.chartDescription?.text = ""
         
         onTimeDataEntry.value = onTimeStepper.value
+        onTimeDataEntry.label = "On Time"
         missedDataEntry.value = missedStepper.value
+        missedDataEntry.label = "Missed"
         lateDataEntry.value = lateStepper.value
+        lateDataEntry.label = "Late"
+        
+        numberOfEntries = [onTimeDataEntry, missedDataEntry, lateDataEntry]
+        updateChartData()
     }
     
     @IBAction func changeOnTime(_ sender: Any) {
@@ -53,7 +59,13 @@ class LandlordVC: UIViewController {
     }
     
     func updateChartData() {
+        let chartDataSet = PieChartDataSet(entries: numberOfEntries, label: nil)
+        let chartData = PieChartData(dataSet: chartDataSet)
         
+        let colors = [UIColor(named: "onTimeColor"), UIColor(named: "missedColor"), UIColor(named: "lateColor")]
+        chartDataSet.colors = colors as! [NSUIColor]
+        
+        pieChart.data = chartData
     }
     
     
