@@ -14,14 +14,12 @@ class StartVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background1.jpg")!)
         setupElements()
     }
     
     func setupElements() {
         Utilities.styleFilledButton(signUpButton)
-        Utilities.styleFilledButton(loginButton)
+        Utilities.styleHollowButton(loginButton)
     }
-
-
 }
