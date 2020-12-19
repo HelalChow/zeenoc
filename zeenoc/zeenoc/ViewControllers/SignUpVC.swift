@@ -80,7 +80,7 @@ class SignUpVC: UIViewController {
             //Create User
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
                 if err != nil {
-                    self.showError("Error Creating User")
+                    self.showError(err!.localizedDescription)
                 } else {
                     let db = Firestore.firestore()
                     db.collection(self.accountType).addDocument(data: [
@@ -89,7 +89,7 @@ class SignUpVC: UIViewController {
                         "uid": result!.user.uid
                     ]) { (error) in
                         if error != nil {
-                            self.showError("Error Saving User Data")
+                            self.showError(error!.localizedDescription)
                         }
                     }
                     //Transition to Home Screen

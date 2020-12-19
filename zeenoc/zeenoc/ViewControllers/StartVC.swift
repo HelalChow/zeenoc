@@ -15,6 +15,11 @@ class StartVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background1.jpg")!)
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "background1.jpg")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        backgroundImage.alpha = 0.7
+        self.view.insertSubview(backgroundImage, at: 0)
         setupElements()
     }
     
