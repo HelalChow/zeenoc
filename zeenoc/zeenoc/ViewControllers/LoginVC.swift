@@ -40,14 +40,31 @@ class LoginVC: UIViewController {
                 self.errorLabel.text = error!.localizedDescription
                 self.errorLabel.alpha = 1
             } else {
+//                let db = Firestore.firestore()
+//                let user = Auth.auth().currentUser
+//
+//                let docRef = db.collection("landlords").document(user!.uid)
+//                docRef.getDocument { (document, error) in
+//                    if document!.exists {
+//                        let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.landlordVC) as? LandlordVC
+//                        self.view.window?.rootViewController = homeViewController
+//                        self.view.window?.makeKeyAndVisible()
+//
+//                      } else {
+//                        let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.tenantVC) as? TenantVC
+//                        self.view.window?.rootViewController = homeViewController
+//                        self.view.window?.makeKeyAndVisible()
+//                      }
+//                }
                 let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.landlordVC) as? LandlordVC
                 self.view.window?.rootViewController = homeViewController
                 self.view.window?.makeKeyAndVisible()
+
             }
         }
         
-        let db = Firestore.firestore()
     }
+
     
     
 }

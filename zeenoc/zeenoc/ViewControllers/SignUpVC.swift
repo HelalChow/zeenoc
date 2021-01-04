@@ -47,59 +47,95 @@ class SignUpVC: UIViewController {
         }
     }
     
-    func validateFields() -> String? {
+    func validateFields() -> Bool {
+        //Check if password is valid
+        let cleanPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Utilities.isPasswordValid(cleanPassword) == false {
+            self.showError("Password must contain: 8 characters, a number, special character")
+            return true
+        }
+        
         // Check if all fields are filled in
         if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            print("Please fill in all fields")
+            self.showError("Please fill in all fields")
+            return true
         }
         
-        //Check if password is valid
-        let cleanPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        if Utilities.isPasswordValid(cleanPassword) == false {
-            print("Password must contain: 8 characters, a number, special character")
-        }
-        
-        return nil
+        return false
     }
     
     @IBAction func signUpTapped(_ sender: Any) {
         
-        let error = validateFields()
+        let err = validateFields()
         
-        if error != nil {
-            showError(error!)
-        } else {
+        if err == false {
+            
             let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
+            let db = Firestore.firestore()
+            let user = Auth.auth().currentUser
+            db.collection(self.accountType).document(user!.uid).setData(["firstName": firstName, "lastName": lastName,"email": email, "accountType": self.accountType, "uid": user?.uid as Any])
+            transitionToHome()
+//            user?.sendEmailVerification { (error) in
+////                if err != nil {
+//                    guard let error = error else {
+//                        print("email sent")
+//                        self.showError("Verification email has been sent!")
+//                        return
+//                    }
+//                    self.showError("There was an issue verifying email")
+////                }
+//            }
+
             //Create User
-            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-                if err != nil {
-                    self.showError(err!.localizedDescription)
-                } else {
-                    let db = Firestore.firestore()
-                    db.collection(self.accountType).addDocument(data: [
-                        "firstName": firstName,
-                        "lastName": lastName,
-                        "uid": result!.user.uid
-                    ]) { (error) in
-                        if error != nil {
-                            self.showError(error!.localizedDescription)
-                        }
-                    }
-                    //Transition to Home Screen
-                    self.transitionToHome()
-                }
-            }
+//            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+//                if err != nil {
+//                    self.showError(err!.localizedDescription)
+//                } else {
+//                    let db = Firestore.firestore()
+//                    db.collection(self.accountType).addDocument(data: [
+//                        "firstName": firstName,
+//                        "lastName": lastName,
+//                        "uid": result!.user.uid
+//                    ]) { (error) in
+//                        if error != nil {
+//                            self.showError(error!.localizedDescription)
+//                        }
+//                    }
+//                    //Transition to Home Screen
+//                    self.transitionToHome()
+//                }
+//            }
             
             
         }
     }
+    
+//    func createUser(err: String) {
+//        let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//        let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//        let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//
+//        let db = Firestore.firestore()
+//        let user = Auth.auth().currentUser
+//        db.collection(self.accountType).document(user!.uid).setData(["firstName": firstName, "lastName": lastName,"uid": user?.uid])
+//        user?.sendEmailVerification { (error) in
+//            if err != nil {
+//                guard let error = error else {
+//                    self.showError("Verification email has been sent!")
+//                    return
+//                }
+//                self.showError("There was an issue verifying email")
+//            }
+//        }
+//    }
     
     func showError(_ message: String) {
         errorLabel.text = message
