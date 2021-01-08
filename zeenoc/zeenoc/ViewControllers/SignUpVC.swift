@@ -78,11 +78,6 @@ class SignUpVC: UIViewController {
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-//            let db = Firestore.firestore()
-//            let user = Auth.auth().currentUser
-//            db.collection(self.accountType).document(user!.uid).setData(["firstName": firstName, "lastName": lastName,"email": email, "accountType": self.accountType, "uid": user?.uid as Any])
-//            transitionToHome()
-
 
             //Create User
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
@@ -90,17 +85,9 @@ class SignUpVC: UIViewController {
                     self.showError(err!.localizedDescription)
                 } else {
                     let db = Firestore.firestore()
-                    db.collection(self.accountType).addDocument(data: [
-                        "firstName": firstName,
-                        "lastName": lastName,
-                        "email": email,
-                        "accountType": self.accountType,
-                        "uid": result!.user.uid
-                    ]) { (error) in
-                        if error != nil {
-                            self.showError(error!.localizedDescription)
-                        }
-                    }
+                    let user = Auth.auth().currentUser
+                    db.collection("users").document(user!.uid).setData(["firstName": firstName, "lastName": lastName,"email": email, "accountType": self.accountType, "uid": user?.uid as Any])
+                    
                     //Transition to Home Screen
                     self.transitionToHome()
                 }
@@ -116,7 +103,7 @@ class SignUpVC: UIViewController {
     
 
     func transitionToHome() {
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.landlordVC) as? LandlordVC
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.startVC) as? StartVC
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
     }

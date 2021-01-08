@@ -11,5 +11,6 @@ struct Constants {
     struct Storyboard {
         static let landlordVC = "LandlordVC"
         static let tenantVC = "TenantVC"
+        static let startVC = "StartVC"
     }
 }

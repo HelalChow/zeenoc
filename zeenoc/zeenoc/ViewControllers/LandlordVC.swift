@@ -80,7 +80,7 @@ class LandlordVC: UIViewController {
     func firebaseCall(completion:@escaping([Property])->()) {
         let uid = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
-        db.collection("landlords").document("qgzC3W8vCEIPt7hfcHsQ").collection("properties").getDocuments() { (snap, err) in
+        db.collection("users").document(uid!).collection("properties").getDocuments() { (snap, err) in
             if err != nil {
                 return
             }
@@ -98,6 +98,19 @@ class LandlordVC: UIViewController {
                 completion(properties)
             }
         }
+    }
+    @IBAction func logOutTapped(_ sender: Any) {
+        do {
+            print("tapped")
+            try Auth.auth().signOut()
+        }
+        catch {
+            print("thre was a problem")
+        }
+        let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.startVC) as? StartVC
+        self.view.window?.rootViewController = homeViewController
+        self.view.window?.makeKeyAndVisible()
+        
     }
 }
 

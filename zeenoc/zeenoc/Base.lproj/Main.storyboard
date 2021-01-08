@@ -11,7 +11,7 @@
         <!--StartVC-->
         <scene sceneID="rba-Bo-S3j">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="W5U-Ed-w0U" customClass="StartVC" customModule="zeenoc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartVC" modalPresentationStyle="fullScreen" id="W5U-Ed-w0U" customClass="StartVC" customModule="zeenoc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gl8-Zc-Tuu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,6 +313,9 @@
                                 <rect key="frame" x="40" y="49" width="57" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YBf-sO-m6f"/>
+                                </connections>
                             </button>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-Sq-s4V">
                                 <rect key="frame" x="160" y="84" width="94" height="32"/>
@@ -360,7 +363,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vhl-ws-vM7"/>
+        <segue reference="iYA-Yr-h8J"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="opaqueSeparatorColor">
