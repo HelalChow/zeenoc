@@ -78,64 +78,36 @@ class SignUpVC: UIViewController {
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            let db = Firestore.firestore()
-            let user = Auth.auth().currentUser
-            db.collection(self.accountType).document(user!.uid).setData(["firstName": firstName, "lastName": lastName,"email": email, "accountType": self.accountType, "uid": user?.uid as Any])
-            transitionToHome()
-//            user?.sendEmailVerification { (error) in
-////                if err != nil {
-//                    guard let error = error else {
-//                        print("email sent")
-//                        self.showError("Verification email has been sent!")
-//                        return
-//                    }
-//                    self.showError("There was an issue verifying email")
-////                }
-//            }
+//            let db = Firestore.firestore()
+//            let user = Auth.auth().currentUser
+//            db.collection(self.accountType).document(user!.uid).setData(["firstName": firstName, "lastName": lastName,"email": email, "accountType": self.accountType, "uid": user?.uid as Any])
+//            transitionToHome()
+
 
             //Create User
-//            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-//                if err != nil {
-//                    self.showError(err!.localizedDescription)
-//                } else {
-//                    let db = Firestore.firestore()
-//                    db.collection(self.accountType).addDocument(data: [
-//                        "firstName": firstName,
-//                        "lastName": lastName,
-//                        "uid": result!.user.uid
-//                    ]) { (error) in
-//                        if error != nil {
-//                            self.showError(error!.localizedDescription)
-//                        }
-//                    }
-//                    //Transition to Home Screen
-//                    self.transitionToHome()
-//                }
-//            }
-            
-            
+            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+                if err != nil {
+                    self.showError(err!.localizedDescription)
+                } else {
+                    let db = Firestore.firestore()
+                    db.collection(self.accountType).addDocument(data: [
+                        "firstName": firstName,
+                        "lastName": lastName,
+                        "email": email,
+                        "accountType": self.accountType,
+                        "uid": result!.user.uid
+                    ]) { (error) in
+                        if error != nil {
+                            self.showError(error!.localizedDescription)
+                        }
+                    }
+                    //Transition to Home Screen
+                    self.transitionToHome()
+                }
+            }
+
         }
     }
-    
-//    func createUser(err: String) {
-//        let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//
-//        let db = Firestore.firestore()
-//        let user = Auth.auth().currentUser
-//        db.collection(self.accountType).document(user!.uid).setData(["firstName": firstName, "lastName": lastName,"uid": user?.uid])
-//        user?.sendEmailVerification { (error) in
-//            if err != nil {
-//                guard let error = error else {
-//                    self.showError("Verification email has been sent!")
-//                    return
-//                }
-//                self.showError("There was an issue verifying email")
-//            }
-//        }
-//    }
     
     func showError(_ message: String) {
         errorLabel.text = message
