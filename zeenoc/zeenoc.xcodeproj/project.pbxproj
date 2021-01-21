@@ -25,6 +25,7 @@
 		1B80E1EE258C03B500E96051 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1ED258C03B500E96051 /* StartVC.swift */; };
 		1B80E1F3258C1AD600E96051 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1F2258C1AD600E96051 /* Constants.swift */; };
 		1B80E1F825A3B59300E96051 /* TenantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1F725A3B59300E96051 /* TenantVC.swift */; };
+		1BA3DDAF25AB9D8300BC2CD2 /* AddPropertyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA3DDAE25AB9D8300BC2CD2 /* AddPropertyVC.swift */; };
 		3EAC0D60751994F2AC967C81 /* Pods_zeenoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F024B803A25D44ACAC6165 /* Pods_zeenoc.framework */; };
 		90E05756ABD1773CA6E9D1AB /* Pods_zeenocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC8135C5E3C87905C117F92 /* Pods_zeenocTests.framework */; };
 		D8278CD6355E3A70D13092B9 /* Pods_zeenoc_zeenocUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0C798B9DB16D8F43A5C8BF /* Pods_zeenoc_zeenocUITests.framework */; };
@@ -72,6 +73,7 @@
 		1B80E1ED258C03B500E96051 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		1B80E1F2258C1AD600E96051 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1B80E1F725A3B59300E96051 /* TenantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantVC.swift; sourceTree = "<group>"; };
+		1BA3DDAE25AB9D8300BC2CD2 /* AddPropertyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPropertyVC.swift; sourceTree = "<group>"; };
 		31F024B803A25D44ACAC6165 /* Pods_zeenoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeenoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38855CC09648DB65769C0866 /* Pods-zeenocTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeenocTests.debug.xcconfig"; path = "Target Support Files/Pods-zeenocTests/Pods-zeenocTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DC8135C5E3C87905C117F92 /* Pods_zeenocTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeenocTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +188,7 @@
 				1B083D8F258BF78200AB8DAC /* SignUpVC.swift */,
 				1B80E1ED258C03B500E96051 /* StartVC.swift */,
 				1B80E1F725A3B59300E96051 /* TenantVC.swift */,
+				1BA3DDAE25AB9D8300BC2CD2 /* AddPropertyVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				1B80E1F3258C1AD600E96051 /* Constants.swift in Sources */,
 				1B61ED852581C99B00E259ED /* PropertyCell.swift in Sources */,
 				1B265A78258C0184009DCB4E /* Utilities.swift in Sources */,
+				1BA3DDAF25AB9D8300BC2CD2 /* AddPropertyVC.swift in Sources */,
 				1B61ED2D2581B86A00E259ED /* SceneDelegate.swift in Sources */,
 				1B80E1EE258C03B500E96051 /* StartVC.swift in Sources */,
 			);
