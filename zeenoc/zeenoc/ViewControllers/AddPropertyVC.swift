@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddPropertyVC: UIViewController {
 
@@ -36,4 +37,19 @@ class AddPropertyVC: UIViewController {
         
     }
 
+    @IBAction func registerTapped(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
+        
+        let db = Firestore.firestore()
+        let user = Auth.auth().currentUser?.uid
+        db.collection("users").document(user!).collection("properties").addDocument(data: [
+            "address": addressTextField.text!,
+            "bedroom": bedroomTextField.text!,
+            "bathroom": bathroomTextField.text!,
+            "squareFoot": squareFootTextField.text!,
+            "rent": rentTextField.text!,
+            "descriptionn": descriptionTextField.text!
+        ])
+        
+    }
 }

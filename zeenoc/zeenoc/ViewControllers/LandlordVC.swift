@@ -34,7 +34,7 @@ class LandlordVC: UIViewController {
                 self.tableView.reloadData()
             }
         }
-        firebaseCall(completion: anonymousFunction)
+//        firebaseCall(completion: anonymousFunction)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -112,6 +112,11 @@ class LandlordVC: UIViewController {
         self.view.window?.makeKeyAndVisible()
         
     }
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue){
+        
+    }
+
+    
 }
 
 extension LandlordVC: UITableViewDelegate{
