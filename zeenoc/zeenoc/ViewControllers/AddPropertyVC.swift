@@ -11,9 +11,7 @@ import Firebase
 class AddPropertyVC: UIViewController {
 
     @IBOutlet weak var addressTextField: UITextField!
-    @IBOutlet weak var bedroomTextField: UITextField!
-    @IBOutlet weak var bathroomTextField: UITextField!
-    @IBOutlet weak var squareFootTextField: UITextField!
+    @IBOutlet weak var deadlineTextField: UITextField!
     @IBOutlet weak var rentTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
@@ -28,9 +26,7 @@ class AddPropertyVC: UIViewController {
     func setupElements() {
         
         Utilities.styleTextField(addressTextField)
-        Utilities.styleTextField(bedroomTextField)
-        Utilities.styleTextField(bathroomTextField)
-        Utilities.styleTextField(squareFootTextField)
+        Utilities.styleTextField(deadlineTextField)
         Utilities.styleTextField(rentTextField)
         Utilities.styleTextField(descriptionTextField)
         Utilities.styleFilledButton(registerButton)
@@ -38,17 +34,14 @@ class AddPropertyVC: UIViewController {
     }
 
     @IBAction func registerTapped(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
         
         let db = Firestore.firestore()
         let user = Auth.auth().currentUser?.uid
         db.collection("users").document(user!).collection("properties").addDocument(data: [
             "address": addressTextField.text!,
-            "bedroom": bedroomTextField.text!,
-            "bathroom": bathroomTextField.text!,
-            "squareFoot": squareFootTextField.text!,
+            "deadline": deadlineTextField.text!,
             "rent": rentTextField.text!,
-            "descriptionn": descriptionTextField.text!
+            "description": descriptionTextField.text!
         ])
         
     }

@@ -34,7 +34,7 @@ class LandlordVC: UIViewController {
                 self.tableView.reloadData()
             }
         }
-//        firebaseCall(completion: anonymousFunction)
+        firebaseCall(completion: anonymousFunction)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -73,11 +73,9 @@ class LandlordVC: UIViewController {
         
         pieChart.data = chartData
     }
-    
-    
-    
-    
+ 
     func firebaseCall(completion:@escaping([Property])->()) {
+        var currProperties = [Property]()
         let uid = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
         db.collection("users").document(uid!).collection("properties").getDocuments() { (snap, err) in
@@ -86,37 +84,39 @@ class LandlordVC: UIViewController {
             }
             for property in snap!.documents {
                 let id = property.documentID
-                let name = property.get("tenantName") as! String
+                let name = property.get("tenantName") as? String
                 let address = property.get("address") as! String
                 let deadline = property.get("deadline") as! String
-                let rent = property.get("rent") as! Int
+                let rent = property.get("rent") as! String
 
-                properties.append(Property(id: id, tenantName: name, address: address, deadline: "12/" + deadline + "/2020", rent: "$" + String(rent)))
+                currProperties.append(Property(id: id, tenantName: name ?? "John Doe", address: address, deadline: "12/" + deadline + "/2020", rent: "$" + String(rent)))
             }
+            properties = currProperties
             print(properties)
             DispatchQueue.main.async {
                 completion(properties)
             }
         }
     }
+    
     @IBAction func logOutTapped(_ sender: Any) {
         do {
             print("tapped")
             try Auth.auth().signOut()
         }
         catch {
-            print("thre was a problem")
+            print("there was a problem")
         }
         let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.startVC) as? StartVC
         self.view.window?.rootViewController = homeViewController
         self.view.window?.makeKeyAndVisible()
         
     }
+    
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue){
         
     }
 
-    
 }
 
 extension LandlordVC: UITableViewDelegate{
