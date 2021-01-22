@@ -114,7 +114,14 @@ class LandlordVC: UIViewController {
     }
     
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue){
+        let anonymousFunction = { (propertyList: [Property]) in
+            properties = propertyList
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
         
+        firebaseCall(completion: anonymousFunction)
     }
 
 }
