@@ -13,5 +13,8 @@ struct Property {
     var address: String
     var deadline: String
     var rent: String
+    var room: String
+    var bath: String
+    var squareFoot: String
 }
 

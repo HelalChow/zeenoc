@@ -456,7 +456,7 @@
         <!--Item-->
         <scene sceneID="jEl-Ch-Xde">
             <objects>
-                <viewController id="WrO-It-hDz" sceneMemberID="viewController">
+                <viewController id="WrO-It-hDz" customClass="MyPropertiesVC" customModule="zeenoc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lAF-Rz-DgO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -492,6 +492,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="GdF-rE-Ubk"/>
+                    <connections>
+                        <outlet property="tableView" destination="VyL-nD-yHg" id="YcF-nS-0TC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UD7-8u-IwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
