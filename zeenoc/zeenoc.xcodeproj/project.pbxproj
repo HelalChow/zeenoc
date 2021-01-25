@@ -26,6 +26,8 @@
 		1B80E1F3258C1AD600E96051 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1F2258C1AD600E96051 /* Constants.swift */; };
 		1B80E1F825A3B59300E96051 /* TenantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1F725A3B59300E96051 /* TenantVC.swift */; };
 		1BA3DDAF25AB9D8300BC2CD2 /* AddPropertyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA3DDAE25AB9D8300BC2CD2 /* AddPropertyVC.swift */; };
+		1BA3DDB525BF838F00BC2CD2 /* MyPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA3DDB325BF838F00BC2CD2 /* MyPropertyCell.swift */; };
+		1BA3DDB625BF838F00BC2CD2 /* MyPropertyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA3DDB425BF838F00BC2CD2 /* MyPropertyCell.xib */; };
 		3EAC0D60751994F2AC967C81 /* Pods_zeenoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F024B803A25D44ACAC6165 /* Pods_zeenoc.framework */; };
 		90E05756ABD1773CA6E9D1AB /* Pods_zeenocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC8135C5E3C87905C117F92 /* Pods_zeenocTests.framework */; };
 		D8278CD6355E3A70D13092B9 /* Pods_zeenoc_zeenocUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0C798B9DB16D8F43A5C8BF /* Pods_zeenoc_zeenocUITests.framework */; };
@@ -74,6 +76,8 @@
 		1B80E1F2258C1AD600E96051 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1B80E1F725A3B59300E96051 /* TenantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantVC.swift; sourceTree = "<group>"; };
 		1BA3DDAE25AB9D8300BC2CD2 /* AddPropertyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPropertyVC.swift; sourceTree = "<group>"; };
+		1BA3DDB325BF838F00BC2CD2 /* MyPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPropertyCell.swift; sourceTree = "<group>"; };
+		1BA3DDB425BF838F00BC2CD2 /* MyPropertyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPropertyCell.xib; sourceTree = "<group>"; };
 		31F024B803A25D44ACAC6165 /* Pods_zeenoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeenoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38855CC09648DB65769C0866 /* Pods-zeenocTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeenocTests.debug.xcconfig"; path = "Target Support Files/Pods-zeenocTests/Pods-zeenocTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DC8135C5E3C87905C117F92 /* Pods_zeenocTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeenocTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +202,8 @@
 			children = (
 				1B61ED832581C99B00E259ED /* PropertyCell.swift */,
 				1B61ED842581C99B00E259ED /* PropertyCell.xib */,
+				1BA3DDB325BF838F00BC2CD2 /* MyPropertyCell.swift */,
+				1BA3DDB425BF838F00BC2CD2 /* MyPropertyCell.xib */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 			files = (
 				1B61ED372581B86E00E259ED /* LaunchScreen.storyboard in Resources */,
 				1B61ED342581B86E00E259ED /* Assets.xcassets in Resources */,
+				1BA3DDB625BF838F00BC2CD2 /* MyPropertyCell.xib in Resources */,
 				1B083D4B258953C300AB8DAC /* GoogleService-Info.plist in Resources */,
 				1B61ED862581C99B00E259ED /* PropertyCell.xib in Resources */,
 				1B61ED322581B86A00E259ED /* Main.storyboard in Resources */,
@@ -478,6 +485,7 @@
 				1B80E1F825A3B59300E96051 /* TenantVC.swift in Sources */,
 				1B61ED7A2581C90D00E259ED /* LandlordVC.swift in Sources */,
 				1B083D8B258BF77200AB8DAC /* LoginVC.swift in Sources */,
+				1BA3DDB525BF838F00BC2CD2 /* MyPropertyCell.swift in Sources */,
 				1B61ED2B2581B86A00E259ED /* AppDelegate.swift in Sources */,
 				1B80E1F3258C1AD600E96051 /* Constants.swift in Sources */,
 				1B61ED852581C99B00E259ED /* PropertyCell.swift in Sources */,
