@@ -69,6 +69,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressLabel" destination="SGj-at-Jtl" id="V2f-q6-K4g"/>
+                <outlet property="bathLabel" destination="Xwg-B7-qpF" id="ltq-47-bTm"/>
+                <outlet property="rentLabel" destination="Nl6-1i-drg" id="NoH-1F-N9I"/>
+                <outlet property="roomLabel" destination="ldv-pN-pPN" id="8aI-om-Ga5"/>
+                <outlet property="squareFootLabel" destination="Kir-sk-ne2" id="xZW-ER-WtK"/>
+                <outlet property="tenantLabel" destination="GMA-Uv-j30" id="1dh-p5-qId"/>
+            </connections>
             <point key="canvasLocation" x="27.536231884057973" y="135.9375"/>
         </tableViewCell>
     </objects>
