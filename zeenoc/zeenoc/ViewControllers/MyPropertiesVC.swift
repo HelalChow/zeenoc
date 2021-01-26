@@ -31,7 +31,6 @@ extension MyPropertiesVC: UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard?.instantiateViewController(identifier: "PropertyDetailsVC") as? PropertyDetailsVC
         
         self.navigationController?.pushViewController(vc!, animated: true)
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
