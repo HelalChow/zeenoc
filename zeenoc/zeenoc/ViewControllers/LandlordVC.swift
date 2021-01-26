@@ -11,6 +11,7 @@ import Charts
 import TinyConstraints
 
 var properties = [Property]()
+var tenantProperties = [Property]()
 
 class LandlordVC: UIViewController {
 
@@ -28,8 +29,9 @@ class LandlordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let anonymousFunction = { (propertyList: [Property]) in
+        let anonymousFunction = { (propertyList: [Property], tenantPropertyList: [Property]) in
             properties = propertyList
+            tenantProperties = tenantPropertyList
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -74,8 +76,9 @@ class LandlordVC: UIViewController {
         pieChart.data = chartData
     }
  
-    func firebaseCall(completion:@escaping([Property])->()) {
+    func firebaseCall(completion:@escaping([Property], [Property])->()) {
         var currProperties = [Property]()
+        var currTenantProperties = [Property]()
         let uid = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
         db.collection("users").document(uid!).collection("properties").getDocuments() { (snap, err) in
@@ -91,13 +94,19 @@ class LandlordVC: UIViewController {
                 let room = property.get("room") as! String
                 let bath = property.get("bath") as! String
                 let squareFoot = property.get("squareFoot") as! String
-
+                
                 currProperties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
+                
+                if (name != nil) {
+                    currTenantProperties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
+                }
+                
             }
             properties = currProperties
-            print(properties)
+            tenantProperties = currTenantProperties
+            print(tenantProperties)
             DispatchQueue.main.async {
-                completion(properties)
+                completion(properties, tenantProperties)
             }
         }
     }
@@ -117,7 +126,7 @@ class LandlordVC: UIViewController {
     }
     
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue){
-        let anonymousFunction = { (propertyList: [Property]) in
+        let anonymousFunction = { (propertyList: [Property], tenantPropertyList: [Property]) in
             properties = propertyList
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -138,7 +147,7 @@ extension LandlordVC: UITableViewDelegate{
 
 extension LandlordVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return properties.count
+        return tenantProperties.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -146,10 +155,10 @@ extension LandlordVC: UITableViewDataSource{
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "PropertyCell") as! PropertyCell
 
-        let name = properties[indexPath.row].tenantName
-        let address = properties[indexPath.row].address
-        let deadline = properties[indexPath.row].deadline
-        let rent = properties[indexPath.row].rent
+        let name = tenantProperties[indexPath.row].tenantName
+        let address = tenantProperties[indexPath.row].address
+        let deadline = tenantProperties[indexPath.row].deadline
+        let rent = tenantProperties[indexPath.row].rent
         
         cell.setProperty(tenantName: name, address: address, rentAmount: rent, deadline: deadline)
         return cell
