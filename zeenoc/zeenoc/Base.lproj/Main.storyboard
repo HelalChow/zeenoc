@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -555,6 +556,18 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ba:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grG-vf-r5Z">
+                                <rect key="frame" x="118" y="300.5" width="26" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sqft:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqm-6j-evq">
+                                <rect key="frame" x="203" y="300.5" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rent:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-4h-ll1">
                                 <rect key="frame" x="30" y="228.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -597,24 +610,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tenant Goes Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx2-nn-Kc1">
-                                <rect key="frame" x="30" y="422.5" width="170.5" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ba:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grG-vf-r5Z">
-                                <rect key="frame" x="118" y="300.5" width="26" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sqft:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqm-6j-evq">
-                                <rect key="frame" x="203" y="300.5" width="39" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9h-86-Z87">
                                 <rect key="frame" x="67" y="300.5" width="21" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -633,6 +628,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tenant Goes Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx2-nn-Kc1">
+                                <rect key="frame" x="30" y="422.5" width="170.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czb-Fr-6FY">
+                                <rect key="frame" x="360" y="64" width="24" height="25.5"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="trash.fill" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteTapped:" destination="RdB-QJ-xSf" eventType="touchUpInside" id="Jyy-MS-EtM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KgC-sV-Di5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -660,6 +670,7 @@
                             <constraint firstItem="u9h-86-Z87" firstAttribute="centerY" secondItem="FfX-Kn-EhV" secondAttribute="centerY" id="RSw-JD-RCU"/>
                             <constraint firstItem="GSI-ZP-jXG" firstAttribute="top" secondItem="wbW-4h-ll1" secondAttribute="bottom" constant="15" id="VaK-tJ-dMp"/>
                             <constraint firstItem="Heh-uU-SMY" firstAttribute="leading" secondItem="wbW-4h-ll1" secondAttribute="trailing" constant="10" id="YCx-W6-fHY"/>
+                            <constraint firstItem="KgC-sV-Di5" firstAttribute="trailing" secondItem="Czb-Fr-6FY" secondAttribute="trailing" constant="30" id="Zhh-52-2ff"/>
                             <constraint firstItem="wbW-4h-ll1" firstAttribute="top" secondItem="wWD-4k-Zyf" secondAttribute="bottom" constant="15" id="avX-vq-ek9"/>
                             <constraint firstItem="Bf9-hg-jzc" firstAttribute="leading" secondItem="KgC-sV-Di5" secondAttribute="leading" constant="30" id="bze-6Z-WsZ"/>
                             <constraint firstItem="Heh-uU-SMY" firstAttribute="centerY" secondItem="wbW-4h-ll1" secondAttribute="centerY" id="fVX-tk-Fjo"/>
@@ -671,6 +682,7 @@
                             <constraint firstItem="Jx2-nn-Kc1" firstAttribute="leading" secondItem="KgC-sV-Di5" secondAttribute="leading" constant="30" id="q0D-gb-yZc"/>
                             <constraint firstItem="wbW-4h-ll1" firstAttribute="leading" secondItem="KgC-sV-Di5" secondAttribute="leading" constant="30" id="sh6-s8-1Jh"/>
                             <constraint firstItem="jJK-hJ-s9x" firstAttribute="top" secondItem="KgC-sV-Di5" secondAttribute="top" constant="20" id="uc9-zQ-1ju"/>
+                            <constraint firstItem="Czb-Fr-6FY" firstAttribute="top" secondItem="KgC-sV-Di5" secondAttribute="top" constant="20" id="wmS-5Y-s8T"/>
                             <constraint firstItem="Rqm-6j-evq" firstAttribute="centerY" secondItem="FfX-Kn-EhV" secondAttribute="centerY" id="yej-sN-JFM"/>
                         </constraints>
                     </view>
@@ -687,7 +699,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTI-LM-fea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1454" y="2209"/>
+            <point key="canvasLocation" x="-1455.072463768116" y="2208.4821428571427"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NDo-ka-5zH">
@@ -748,6 +760,7 @@
         <segue reference="vhl-ws-vM7"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

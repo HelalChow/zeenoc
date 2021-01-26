@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PropertyDetailsVC: UIViewController {
 
@@ -40,6 +41,18 @@ class PropertyDetailsVC: UIViewController {
         tenantLabel.text = tenant
     }
     
-
-
+    @IBAction func deleteTapped(_ sender: Any) {
+        let db = Firestore.firestore()
+        let user = Auth.auth().currentUser?.uid
+        db.collection("users").document(user!).collection("properties").document(id).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
