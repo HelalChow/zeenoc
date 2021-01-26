@@ -13,7 +13,9 @@ class AddPropertyVC: UIViewController {
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var deadlineTextField: UITextField!
     @IBOutlet weak var rentTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var roomTextField: UITextField!
+    @IBOutlet weak var bathTextField: UITextField!
+    @IBOutlet weak var squareFeetTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     
     
@@ -28,7 +30,9 @@ class AddPropertyVC: UIViewController {
         Utilities.styleTextField(addressTextField)
         Utilities.styleTextField(deadlineTextField)
         Utilities.styleTextField(rentTextField)
-        Utilities.styleTextField(descriptionTextField)
+        Utilities.styleTextField(roomTextField)
+        Utilities.styleTextField(bathTextField)
+        Utilities.styleTextField(squareFeetTextField)
         Utilities.styleFilledButton(registerButton)
         
     }
@@ -41,7 +45,9 @@ class AddPropertyVC: UIViewController {
             "address": addressTextField.text!,
             "deadline": deadlineTextField.text!,
             "rent": rentTextField.text!,
-            "description": descriptionTextField.text!
+            "room": roomTextField.text!,
+            "bath": bathTextField.text!,
+            "squareFoot": squareFeetTextField.text!
         ])
         
     }

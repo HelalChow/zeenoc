@@ -371,48 +371,69 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register New Property" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPa-RA-9Gf">
-                                <rect key="frame" x="30" y="30" width="354" height="25.5"/>
+                                <rect key="frame" x="30" y="30" width="352" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <color key="textColor" red="0.2949929248" green="0.57325567379999998" blue="0.27422639729999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4sQ-GW-olS">
-                                <rect key="frame" x="30" y="90" width="354" height="290"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="4sQ-GW-olS">
+                                <rect key="frame" x="30" y="90" width="352" height="364"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address (Ex. 8219 97th Ave Ozone Park NY 11417)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qso-ZI-i7D">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="tcq-zD-IDD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Deadline (Ex. 15)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ODH-Yy-cPe">
-                                        <rect key="frame" x="0.0" y="60" width="354" height="40"/>
+                                        <rect key="frame" x="0.0" y="80" width="352" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Di8-BJ-XLg"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rent Amount (Ex. 1800)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HRQ-Uz-TA9">
-                                        <rect key="frame" x="0.0" y="120" width="354" height="40"/>
+                                        <rect key="frame" x="0.0" y="160" width="352" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="siJ-Oc-uGv"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes (Ex. No Pets)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ct-aM-Qts">
-                                        <rect key="frame" x="0.0" y="180" width="354" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="0Fg-Ui-Y0i"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="G6h-2Y-66u">
+                                        <rect key="frame" x="0.0" y="240" width="352" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rooms (Ex. 3)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bA5-AT-51I">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="4g4-RB-FmW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Baths (Ex. 2)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1C-HI-bq1">
+                                                <rect key="frame" x="120" y="0.0" width="100" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="i8H-31-SLF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sqft (Ex. 1750)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fF7-fN-OUr">
+                                                <rect key="frame" x="240" y="0.0" width="112" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="gUV-ke-FM6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mha-yP-hmX">
-                                        <rect key="frame" x="0.0" y="240" width="354" height="50"/>
+                                        <rect key="frame" x="0.0" y="314" width="352" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="jOt-VV-Cgw"/>
                                         </constraints>
@@ -442,10 +463,12 @@
                     </view>
                     <connections>
                         <outlet property="addressTextField" destination="Qso-ZI-i7D" id="90s-qD-YTI"/>
+                        <outlet property="bathTextField" destination="g1C-HI-bq1" id="syE-GZ-NJZ"/>
                         <outlet property="deadlineTextField" destination="ODH-Yy-cPe" id="7oH-Dh-pRW"/>
-                        <outlet property="descriptionTextField" destination="3Ct-aM-Qts" id="VUw-33-475"/>
                         <outlet property="registerButton" destination="mha-yP-hmX" id="EQF-qM-aSv"/>
                         <outlet property="rentTextField" destination="HRQ-Uz-TA9" id="ese-4l-X6Y"/>
+                        <outlet property="roomTextField" destination="bA5-AT-51I" id="y0J-gb-Rab"/>
+                        <outlet property="squareFeetTextField" destination="fF7-fN-OUr" id="Bz9-OJ-nLe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQS-kj-3rK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
