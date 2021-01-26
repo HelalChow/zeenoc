@@ -604,13 +604,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ba:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grG-vf-r5Z">
-                                <rect key="frame" x="138" y="300.5" width="26" height="21"/>
+                                <rect key="frame" x="118" y="300.5" width="26" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sqft:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqm-6j-evq">
-                                <rect key="frame" x="243" y="300.5" width="39" height="21"/>
+                                <rect key="frame" x="203" y="300.5" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -622,13 +622,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ba" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqe-bI-vHS">
-                                <rect key="frame" x="174" y="300.5" width="19" height="21"/>
+                                <rect key="frame" x="154" y="300.5" width="19" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sqft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yo0-ua-vPX">
-                                <rect key="frame" x="292" y="300.5" width="30" height="21"/>
+                                <rect key="frame" x="252" y="300.5" width="30" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -653,9 +653,9 @@
                             <constraint firstItem="56A-pI-JPl" firstAttribute="top" secondItem="u9h-86-Z87" secondAttribute="bottom" constant="70" id="Jpl-UU-zhu"/>
                             <constraint firstItem="yo0-ua-vPX" firstAttribute="leading" secondItem="Rqm-6j-evq" secondAttribute="trailing" constant="10" id="LyN-Wz-Bjl"/>
                             <constraint firstItem="4sd-mE-1MH" firstAttribute="centerY" secondItem="wWD-4k-Zyf" secondAttribute="centerY" id="Nhn-AU-9Ee"/>
-                            <constraint firstItem="Rqm-6j-evq" firstAttribute="leading" secondItem="rqe-bI-vHS" secondAttribute="trailing" constant="50" id="NmF-eo-xTK"/>
+                            <constraint firstItem="Rqm-6j-evq" firstAttribute="leading" secondItem="rqe-bI-vHS" secondAttribute="trailing" constant="30" id="NmF-eo-xTK"/>
                             <constraint firstItem="Z9e-1E-bg8" firstAttribute="leading" secondItem="KgC-sV-Di5" secondAttribute="leading" constant="30" id="OWE-yF-ToK"/>
-                            <constraint firstItem="grG-vf-r5Z" firstAttribute="leading" secondItem="u9h-86-Z87" secondAttribute="trailing" constant="50" id="PV8-RM-uce"/>
+                            <constraint firstItem="grG-vf-r5Z" firstAttribute="leading" secondItem="u9h-86-Z87" secondAttribute="trailing" constant="30" id="PV8-RM-uce"/>
                             <constraint firstItem="Jx2-nn-Kc1" firstAttribute="top" secondItem="56A-pI-JPl" secondAttribute="bottom" constant="10" id="R6f-oC-7ud"/>
                             <constraint firstItem="u9h-86-Z87" firstAttribute="centerY" secondItem="FfX-Kn-EhV" secondAttribute="centerY" id="RSw-JD-RCU"/>
                             <constraint firstItem="GSI-ZP-jXG" firstAttribute="top" secondItem="wbW-4h-ll1" secondAttribute="bottom" constant="15" id="VaK-tJ-dMp"/>
@@ -674,6 +674,16 @@
                             <constraint firstItem="Rqm-6j-evq" firstAttribute="centerY" secondItem="FfX-Kn-EhV" secondAttribute="centerY" id="yej-sN-JFM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="Bf9-hg-jzc" id="wlJ-Ho-7DD"/>
+                        <outlet property="bathLabel" destination="rqe-bI-vHS" id="KWj-uR-KUL"/>
+                        <outlet property="deadlineLabel" destination="LFY-aO-cMS" id="xBg-xC-C6U"/>
+                        <outlet property="idLabel" destination="4sd-mE-1MH" id="E3z-3K-cqH"/>
+                        <outlet property="rentLabel" destination="Heh-uU-SMY" id="t0N-8I-OrG"/>
+                        <outlet property="roomLabel" destination="u9h-86-Z87" id="ahL-P9-ygX"/>
+                        <outlet property="squareFeetLabel" destination="yo0-ua-vPX" id="qvH-vK-1I9"/>
+                        <outlet property="tenantLabel" destination="Jx2-nn-Kc1" id="pvX-fY-lw8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTI-LM-fea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

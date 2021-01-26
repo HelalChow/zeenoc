@@ -29,6 +29,15 @@ class MyPropertiesVC: UIViewController {
 extension MyPropertiesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "PropertyDetailsVC") as? PropertyDetailsVC
+
+        vc?.address = properties[indexPath.row].address
+        vc?.id = properties[indexPath.row].id
+        vc?.rent = properties[indexPath.row].rent
+        vc?.deadline = properties[indexPath.row].deadline
+        vc?.room = properties[indexPath.row].room
+        vc?.bath = properties[indexPath.row].bath
+        vc?.squareFeet = properties[indexPath.row].squareFoot
+        vc?.tenant = properties[indexPath.row].tenantName
         
         self.navigationController?.pushViewController(vc!, animated: true)
     }
