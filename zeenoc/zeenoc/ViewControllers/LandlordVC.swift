@@ -88,11 +88,11 @@ class LandlordVC: UIViewController {
                 let address = property.get("address") as! String
                 let deadline = property.get("deadline") as! String
                 let rent = property.get("rent") as! String
-                let room = property.get("room") as? String
-                let bath = property.get("bath") as? String
-                let squareFoot = property.get("squareFoot") as? String
+                let room = property.get("room") as! String
+                let bath = property.get("bath") as! String
+                let squareFoot = property.get("squareFoot") as! String
 
-                currProperties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room ?? "4" + " bds", bath: bath ?? "2" + " ba", squareFoot: squareFoot ?? "1750" + " sqft"))
+                currProperties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
             }
             properties = currProperties
             print(properties)

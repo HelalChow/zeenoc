@@ -19,6 +19,9 @@ class MyPropertiesVC: UIViewController {
         tableView.dataSource = self
 
     }
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
 
 }
