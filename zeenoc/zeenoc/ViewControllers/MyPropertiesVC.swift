@@ -26,14 +26,14 @@ class MyPropertiesVC: UIViewController {
 
 }
 
-extension MyPropertiesVC: UITableViewDelegate {
+extension MyPropertiesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! MyPropertyCell
+        let vc = storyboard?.instantiateViewController(identifier: "PropertyDetailsVC") as? PropertyDetailsVC
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
         
     }
-}
-
-extension MyPropertiesVC: UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return properties.count
     }
@@ -53,4 +53,8 @@ extension MyPropertiesVC: UITableViewDataSource{
         cell.setProperty(tenantName: name, address: address, rentAmount: rent, room: room, bath: bath, squareFoot: squareFoot)
         return cell
     }
+    
+
 }
+
+
