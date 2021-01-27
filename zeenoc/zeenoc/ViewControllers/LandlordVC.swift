@@ -81,7 +81,35 @@ class LandlordVC: UIViewController {
         var currTenantProperties = [Property]()
         let uid = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
-        db.collection("users").document(uid!).collection("properties").getDocuments() { (snap, err) in
+//        db.collection("users").document(uid!).collection("properties").getDocuments() { (snap, err) in
+//            if err != nil {
+//                return
+//            }
+//            for property in snap!.documents {
+//                let id = property.documentID
+//                let name = property.get("tenantName") as? String
+//                let address = property.get("address") as! String
+//                let deadline = property.get("deadline") as! String
+//                let rent = property.get("rent") as! String
+//                let room = property.get("room") as! String
+//                let bath = property.get("bath") as! String
+//                let squareFoot = property.get("squareFoot") as! String
+//
+//                currProperties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
+//
+//                if (name != nil) {
+//                    currTenantProperties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
+//                }
+//
+//            }
+//            properties = currProperties
+//            tenantProperties = currTenantProperties
+//            DispatchQueue.main.async {
+//                completion(properties, tenantProperties)
+//            }
+//        }
+        
+        db.collection("users").document(uid!).collection("properties").addSnapshotListener { (snap, err) in
             if err != nil {
                 return
             }
@@ -94,17 +122,16 @@ class LandlordVC: UIViewController {
                 let room = property.get("room") as! String
                 let bath = property.get("bath") as! String
                 let squareFoot = property.get("squareFoot") as! String
-                
+
                 currProperties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
-                
+
                 if (name != nil) {
                     currTenantProperties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
                 }
-                
+
             }
             properties = currProperties
             tenantProperties = currTenantProperties
-            print(tenantProperties)
             DispatchQueue.main.async {
                 completion(properties, tenantProperties)
             }
@@ -133,7 +160,7 @@ class LandlordVC: UIViewController {
             }
         }
         
-        firebaseCall(completion: anonymousFunction)
+//        firebaseCall(completion: anonymousFunction)
     }
 
 }
