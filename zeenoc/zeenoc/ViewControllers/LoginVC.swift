@@ -31,6 +31,8 @@ class LoginVC: UIViewController {
         Utilities.styleFilledButton(loginButton)
     }
     
+    
+    
     @IBAction func loginTapped(_ sender: Any) {
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -47,16 +49,11 @@ class LoginVC: UIViewController {
                     docRef.getDocument(source: .cache) { (document, error) in
                         if let document = document {
                             let type = document.get("accountType")
-                            print(type)
                             if (type as! String == "landlords"){
-                                let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.landlordVC) as? LandlordVC
-                                self.view.window?.rootViewController = homeViewController
-                                self.view.window?.makeKeyAndVisible()
+                                self.performSegue(withIdentifier: "LandlordTabBarController", sender: nil)
                             }
                             else if (type as! String == "tenants"){
-                                let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.tenantVC) as? TenantVC
-                                self.view.window?.rootViewController = homeViewController
-                                self.view.window?.makeKeyAndVisible()
+                                self.performSegue(withIdentifier: "TenantTabBarController", sender: nil)
                             }
                         } else {
                             print("Document does not exist in cache")

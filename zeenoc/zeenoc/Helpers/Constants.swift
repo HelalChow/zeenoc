@@ -12,5 +12,6 @@ struct Constants {
         static let landlordVC = "LandlordVC"
         static let tenantVC = "TenantVC"
         static let startVC = "StartVC"
+        static let landlordTabBarController = "LandlordTabBarController"
     }
 }
