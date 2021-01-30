@@ -142,7 +142,7 @@ class LandlordVC: UIViewController {
 //                            if properties.isEmpty {
 //                                self.noData = true
 //                            }
-                            return
+                            break
                         }
                     }
                     for i in 0..<tenantProperties.count {
