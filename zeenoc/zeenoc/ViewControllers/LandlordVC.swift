@@ -53,6 +53,10 @@ class LandlordVC: UIViewController {
         updateChartData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
     @IBAction func changeOnTime(_ sender: UIStepper) {
         onTimeDataEntry.value = sender.value
         updateChartData()
@@ -113,25 +117,48 @@ class LandlordVC: UIViewController {
             if err != nil {
                 return
             }
-            for property in snap!.documents {
-                let id = property.documentID
-                let name = property.get("tenantName") as? String
-                let address = property.get("address") as! String
-                let deadline = property.get("deadline") as! String
-                let rent = property.get("rent") as! String
-                let room = property.get("room") as! String
-                let bath = property.get("bath") as! String
-                let squareFoot = property.get("squareFoot") as! String
+            for property in snap!.documentChanges {
+                if property.type == .added {
+                    let id = property.document.documentID
+                    let name = property.document.get("tenantName") as? String
+                    let address = property.document.get("address") as! String
+                    let deadline = property.document.get("deadline") as! String
+                    let rent = property.document.get("rent") as! String
+                    let room = property.document.get("room") as! String
+                    let bath = property.document.get("bath") as! String
+                    let squareFoot = property.document.get("squareFoot") as! String
 
-                currProperties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
+                    properties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
 
-                if (name != nil) {
-                    currTenantProperties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
+                    if (name == nil) {
+                        tenantProperties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
+                    }
+                }
+                if property.type == .removed {
+                    let id = property.document.documentID
+                    for i in 0..<properties.count {
+                        if properties[i].id == id {
+                            properties.remove(at: i)
+//                            if properties.isEmpty {
+//                                self.noData = true
+//                            }
+                            return
+                        }
+                    }
+                    for i in 0..<tenantProperties.count {
+                        if tenantProperties[i].id == id {
+                            tenantProperties.remove(at: i)
+//                            if tenantProperties.isEmpty {
+//                                self.noData = true
+//                            }
+                            return
+                        }
+                    }
                 }
 
             }
-            properties = currProperties
-            tenantProperties = currTenantProperties
+//            properties = currProperties
+//            tenantProperties = currTenantProperties
             DispatchQueue.main.async {
                 completion(properties, tenantProperties)
             }
