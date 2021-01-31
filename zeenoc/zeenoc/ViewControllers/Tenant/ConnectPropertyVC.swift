@@ -19,6 +19,16 @@ class ConnectPropertyVC: UIViewController {
         Utilities.styleFilledButton(sendRequestButton)
     }
     
+    @IBAction func sendRequestTapped(_ sender: Any) {
+        let db = Firestore.firestore()
+        let uid = Auth.auth().currentUser?.uid
+     
+    }
+    
+    
+    
+    
+    
     @IBAction func logOutTapped(_ sender: Any) {
         do {
             print("tapped")

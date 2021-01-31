@@ -49,6 +49,16 @@ class AddPropertyVC: UIViewController {
             "bath": bathTextField.text!,
             "squareFoot": squareFeetTextField.text!
         ])
+//        let docRef = db.collection("users").wh
+        db.collection("properties").addDocument(data: [
+            "address": addressTextField.text!,
+            "deadline": deadlineTextField.text!,
+            "rent": rentTextField.text!,
+            "room": roomTextField.text!,
+            "bath": bathTextField.text!,
+            "squareFoot": squareFeetTextField.text!,
+            "landlord": user!
+        ])
         
     }
 }
