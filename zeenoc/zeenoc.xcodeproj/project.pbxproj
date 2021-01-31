@@ -32,6 +32,7 @@
 		1BA3DDC825C0826500BC2CD2 /* PropertyDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA3DDC725C0826500BC2CD2 /* PropertyDetailsVC.swift */; };
 		1BA3DDCF25C60E0500BC2CD2 /* LandlordTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA3DDCE25C60E0500BC2CD2 /* LandlordTabBarController.swift */; };
 		1BA3DDD725C6124600BC2CD2 /* TenantTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA3DDD625C6124600BC2CD2 /* TenantTabBarController.swift */; };
+		1BA3DE0425C6334700BC2CD2 /* ConnectPropertyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA3DE0325C6334700BC2CD2 /* ConnectPropertyVC.swift */; };
 		3EAC0D60751994F2AC967C81 /* Pods_zeenoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F024B803A25D44ACAC6165 /* Pods_zeenoc.framework */; };
 		90E05756ABD1773CA6E9D1AB /* Pods_zeenocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC8135C5E3C87905C117F92 /* Pods_zeenocTests.framework */; };
 		D8278CD6355E3A70D13092B9 /* Pods_zeenoc_zeenocUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0C798B9DB16D8F43A5C8BF /* Pods_zeenoc_zeenocUITests.framework */; };
@@ -86,6 +87,7 @@
 		1BA3DDC725C0826500BC2CD2 /* PropertyDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailsVC.swift; sourceTree = "<group>"; };
 		1BA3DDCE25C60E0500BC2CD2 /* LandlordTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandlordTabBarController.swift; sourceTree = "<group>"; };
 		1BA3DDD625C6124600BC2CD2 /* TenantTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantTabBarController.swift; sourceTree = "<group>"; };
+		1BA3DE0325C6334700BC2CD2 /* ConnectPropertyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPropertyVC.swift; sourceTree = "<group>"; };
 		31F024B803A25D44ACAC6165 /* Pods_zeenoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeenoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38855CC09648DB65769C0866 /* Pods-zeenocTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeenocTests.debug.xcconfig"; path = "Target Support Files/Pods-zeenocTests/Pods-zeenocTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DC8135C5E3C87905C117F92 /* Pods_zeenocTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeenocTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,14 +198,11 @@
 		1B61ED7E2581C94900E259ED /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1B61ED792581C90D00E259ED /* LandlordVC.swift */,
+				1BA3DDE125C6304200BC2CD2 /* Tenant */,
+				1BA3DDE025C6301400BC2CD2 /* Landlord */,
 				1B083D8A258BF77200AB8DAC /* LoginVC.swift */,
 				1B083D8F258BF78200AB8DAC /* SignUpVC.swift */,
 				1B80E1ED258C03B500E96051 /* StartVC.swift */,
-				1B80E1F725A3B59300E96051 /* TenantVC.swift */,
-				1BA3DDAE25AB9D8300BC2CD2 /* AddPropertyVC.swift */,
-				1BA3DDBA25BF893200BC2CD2 /* MyPropertiesVC.swift */,
-				1BA3DDC725C0826500BC2CD2 /* PropertyDetailsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -234,6 +233,26 @@
 				1BA3DDD625C6124600BC2CD2 /* TenantTabBarController.swift */,
 			);
 			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		1BA3DDE025C6301400BC2CD2 /* Landlord */ = {
+			isa = PBXGroup;
+			children = (
+				1B61ED792581C90D00E259ED /* LandlordVC.swift */,
+				1BA3DDAE25AB9D8300BC2CD2 /* AddPropertyVC.swift */,
+				1BA3DDBA25BF893200BC2CD2 /* MyPropertiesVC.swift */,
+				1BA3DDC725C0826500BC2CD2 /* PropertyDetailsVC.swift */,
+			);
+			path = Landlord;
+			sourceTree = "<group>";
+		};
+		1BA3DDE125C6304200BC2CD2 /* Tenant */ = {
+			isa = PBXGroup;
+			children = (
+				1B80E1F725A3B59300E96051 /* TenantVC.swift */,
+				1BA3DE0325C6334700BC2CD2 /* ConnectPropertyVC.swift */,
+			);
+			path = Tenant;
 			sourceTree = "<group>";
 		};
 		A9A7A9B28ED1ED2D97854A34 /* Pods */ = {
@@ -508,6 +527,7 @@
 				1B083D8B258BF77200AB8DAC /* LoginVC.swift in Sources */,
 				1BA3DDD725C6124600BC2CD2 /* TenantTabBarController.swift in Sources */,
 				1BA3DDB525BF838F00BC2CD2 /* MyPropertyCell.swift in Sources */,
+				1BA3DE0425C6334700BC2CD2 /* ConnectPropertyVC.swift in Sources */,
 				1B61ED2B2581B86A00E259ED /* AppDelegate.swift in Sources */,
 				1B80E1F3258C1AD600E96051 /* Constants.swift in Sources */,
 				1BA3DDCF25C60E0500BC2CD2 /* LandlordTabBarController.swift in Sources */,

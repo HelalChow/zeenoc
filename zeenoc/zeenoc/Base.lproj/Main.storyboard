@@ -142,7 +142,8 @@
         <!--Item-->
         <scene sceneID="9g8-HU-vNY">
             <objects>
-                <viewController storyboardIdentifier="TenantVC" modalPresentationStyle="fullScreen" id="KZ0-gW-b2Y" customClass="TenantVC" customModule="zeenoc" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Pd-Wn-h1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="ConnectPropertyVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KZ0-gW-b2Y" customClass="ConnectPropertyVC" customModule="zeenoc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pWH-xF-gDb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +159,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
-                                    <action selector="logOutTapped:" destination="KZ0-gW-b2Y" eventType="touchUpInside" id="g1b-A8-UbL"/>
+                                    <action selector="logOutTapped:" destination="KZ0-gW-b2Y" eventType="touchUpInside" id="gCL-mf-90f"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Property ID (Ex. HPBawoItzmm0qsqHGP3X)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rv5-iI-gHD">
@@ -193,11 +194,10 @@
                     <tabBarItem key="tabBarItem" title="Item" id="nHQ-nk-rYf"/>
                     <navigationItem key="navigationItem" id="Dgf-P7-xwE"/>
                     <connections>
-                        <outlet property="propertyIDTextField" destination="Rv5-iI-gHD" id="Qdy-iX-eAf"/>
-                        <outlet property="sendRequestButton" destination="VVt-3i-8ou" id="Yrd-7G-1fs"/>
+                        <outlet property="properyIDTextField" destination="Rv5-iI-gHD" id="tT5-i7-b4B"/>
+                        <outlet property="sendRequestButton" destination="VVt-3i-8ou" id="ctT-g4-M7L"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Pd-Wn-h1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="500.00000000000006" y="819.64285714285711"/>
         </scene>
