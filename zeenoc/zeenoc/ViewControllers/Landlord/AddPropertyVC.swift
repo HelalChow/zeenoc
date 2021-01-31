@@ -41,16 +41,15 @@ class AddPropertyVC: UIViewController {
         
         let db = Firestore.firestore()
         let user = Auth.auth().currentUser?.uid
-        db.collection("users").document(user!).collection("properties").addDocument(data: [
+        let docID = db.collection("users").document(user!).collection("properties").addDocument(data: [
             "address": addressTextField.text!,
             "deadline": deadlineTextField.text!,
             "rent": rentTextField.text!,
             "room": roomTextField.text!,
             "bath": bathTextField.text!,
             "squareFoot": squareFeetTextField.text!
-        ])
-//        let docRef = db.collection("users").wh
-        db.collection("properties").addDocument(data: [
+        ]).documentID
+        db.collection("properties").document(docID).setData([
             "address": addressTextField.text!,
             "deadline": deadlineTextField.text!,
             "rent": rentTextField.text!,
