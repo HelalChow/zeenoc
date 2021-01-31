@@ -10,9 +10,14 @@ import Firebase
 
 class TenantVC: UIViewController {
 
+    @IBOutlet weak var propertyIDTextField: UITextField!
+    @IBOutlet weak var sendRequestButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Utilities.styleTextField(propertyIDTextField)
+        Utilities.styleFilledButton(sendRequestButton)
+        
     }
     @IBAction func logOutTapped(_ sender: Any) {
         do {
