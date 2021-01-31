@@ -22,6 +22,19 @@ class ConnectPropertyVC: UIViewController {
     @IBAction func sendRequestTapped(_ sender: Any) {
         let db = Firestore.firestore()
         let uid = Auth.auth().currentUser?.uid
+        db.collection("properties").document(properyIDTextField.text!).getDocument { (document, error) in
+            if let document = document, document.exists {
+                let landlord = document.get("landlord") as! String
+                db.collection("users").document(landlord).collection("requests").addDocument(data: [
+                    "tenant" : uid!,
+                    "property" : self.properyIDTextField.text!,
+                ])
+            } else {
+                print("document not found")
+            }
+        }
+        
+
      
     }
     
