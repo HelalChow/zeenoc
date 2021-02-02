@@ -21,6 +21,10 @@
 		1B61ED852581C99B00E259ED /* PropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61ED832581C99B00E259ED /* PropertyCell.swift */; };
 		1B61ED862581C99B00E259ED /* PropertyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B61ED842581C99B00E259ED /* PropertyCell.xib */; };
 		1B61EDBE2581D23000E259ED /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61EDBD2581D23000E259ED /* Property.swift */; };
+		1B688C0925C8EF4D00D722D4 /* notificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B688C0825C8EF4D00D722D4 /* notificationsVC.swift */; };
+		1B688C1725C8F5E900D722D4 /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B688C1525C8F5E900D722D4 /* NotificationsCell.swift */; };
+		1B688C1825C8F5E900D722D4 /* NotificationsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B688C1625C8F5E900D722D4 /* NotificationsCell.xib */; };
+		1B688C2325C901AA00D722D4 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B688C2225C901AA00D722D4 /* Requests.swift */; };
 		1B80E1EE258C03B500E96051 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1ED258C03B500E96051 /* StartVC.swift */; };
 		1B80E1F3258C1AD600E96051 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1F2258C1AD600E96051 /* Constants.swift */; };
 		1B80E1F825A3B59300E96051 /* TenantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1F725A3B59300E96051 /* TenantVC.swift */; };
@@ -76,6 +80,10 @@
 		1B61ED832581C99B00E259ED /* PropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyCell.swift; sourceTree = "<group>"; };
 		1B61ED842581C99B00E259ED /* PropertyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyCell.xib; sourceTree = "<group>"; };
 		1B61EDBD2581D23000E259ED /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		1B688C0825C8EF4D00D722D4 /* notificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationsVC.swift; sourceTree = "<group>"; };
+		1B688C1525C8F5E900D722D4 /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
+		1B688C1625C8F5E900D722D4 /* NotificationsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsCell.xib; sourceTree = "<group>"; };
+		1B688C2225C901AA00D722D4 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		1B80E1ED258C03B500E96051 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		1B80E1F2258C1AD600E96051 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1B80E1F725A3B59300E96051 /* TenantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantVC.swift; sourceTree = "<group>"; };
@@ -214,6 +222,8 @@
 				1B61ED842581C99B00E259ED /* PropertyCell.xib */,
 				1BA3DDB325BF838F00BC2CD2 /* MyPropertyCell.swift */,
 				1BA3DDB425BF838F00BC2CD2 /* MyPropertyCell.xib */,
+				1B688C1525C8F5E900D722D4 /* NotificationsCell.swift */,
+				1B688C1625C8F5E900D722D4 /* NotificationsCell.xib */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -222,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				1B61EDBD2581D23000E259ED /* Property.swift */,
+				1B688C2225C901AA00D722D4 /* Requests.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -242,6 +253,7 @@
 				1BA3DDAE25AB9D8300BC2CD2 /* AddPropertyVC.swift */,
 				1BA3DDBA25BF893200BC2CD2 /* MyPropertiesVC.swift */,
 				1BA3DDC725C0826500BC2CD2 /* PropertyDetailsVC.swift */,
+				1B688C0825C8EF4D00D722D4 /* notificationsVC.swift */,
 			);
 			path = Landlord;
 			sourceTree = "<group>";
@@ -389,6 +401,7 @@
 				1B61ED372581B86E00E259ED /* LaunchScreen.storyboard in Resources */,
 				1B61ED342581B86E00E259ED /* Assets.xcassets in Resources */,
 				1BA3DDB625BF838F00BC2CD2 /* MyPropertyCell.xib in Resources */,
+				1B688C1825C8F5E900D722D4 /* NotificationsCell.xib in Resources */,
 				1B61ED862581C99B00E259ED /* PropertyCell.xib in Resources */,
 				1B61ED322581B86A00E259ED /* Main.storyboard in Resources */,
 				1BA3DDC325BF8F8F00BC2CD2 /* GoogleService-Info.plist in Resources */,
@@ -519,6 +532,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B688C1725C8F5E900D722D4 /* NotificationsCell.swift in Sources */,
 				1BA3DDC825C0826500BC2CD2 /* PropertyDetailsVC.swift in Sources */,
 				1B083D90258BF78200AB8DAC /* SignUpVC.swift in Sources */,
 				1B61EDBE2581D23000E259ED /* Property.swift in Sources */,
@@ -530,8 +544,10 @@
 				1BA3DE0425C6334700BC2CD2 /* ConnectPropertyVC.swift in Sources */,
 				1B61ED2B2581B86A00E259ED /* AppDelegate.swift in Sources */,
 				1B80E1F3258C1AD600E96051 /* Constants.swift in Sources */,
+				1B688C2325C901AA00D722D4 /* Requests.swift in Sources */,
 				1BA3DDCF25C60E0500BC2CD2 /* LandlordTabBarController.swift in Sources */,
 				1B61ED852581C99B00E259ED /* PropertyCell.swift in Sources */,
+				1B688C0925C8EF4D00D722D4 /* notificationsVC.swift in Sources */,
 				1B265A78258C0184009DCB4E /* Utilities.swift in Sources */,
 				1BA3DDAF25AB9D8300BC2CD2 /* AddPropertyVC.swift in Sources */,
 				1BA3DDBB25BF893200BC2CD2 /* MyPropertiesVC.swift in Sources */,
