@@ -53,7 +53,15 @@ class LoginVC: UIViewController {
                                 self.performSegue(withIdentifier: "LandlordTabBarController", sender: nil)
                             }
                             else if (type as! String == "tenants"){
-                                self.performSegue(withIdentifier: "TenantTabBarController", sender: nil)
+                                let paired = document.get("paired")
+                 
+                                if paired as! String == "false"{
+                                    self.performSegue(withIdentifier: "ConnectPropertyVC", sender: nil)
+                                }
+                                else if paired as! String == "true" {
+                                    self.performSegue(withIdentifier: "TenantTabBarController", sender: nil)
+                                }
+                                
                             }
                         } else {
                             print("Document does not exist in cache")

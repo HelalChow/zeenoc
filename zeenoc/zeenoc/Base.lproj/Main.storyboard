@@ -133,6 +133,7 @@
                         <outlet property="passwordTextField" destination="BTz-mm-FPk" id="lT1-Th-8wZ"/>
                         <segue destination="kPJ-lq-QsD" kind="show" identifier="LandlordTabBarController" id="Gbs-sd-nKQ"/>
                         <segue destination="Idr-Xh-1NG" kind="show" identifier="TenantTabBarController" id="d5Q-EE-NhW"/>
+                        <segue destination="KZ0-gW-b2Y" kind="show" identifier="ConnectPropertyVC" id="69X-GZ-5mu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vc1-uz-ldQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -144,17 +145,17 @@
             <objects>
                 <viewController storyboardIdentifier="ConnectPropertyVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KZ0-gW-b2Y" customClass="ConnectPropertyVC" customModule="zeenoc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pWH-xF-gDb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter A Property ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GND-4K-rdw">
-                                <rect key="frame" x="40" y="150" width="334" height="27.5"/>
+                                <rect key="frame" x="40" y="194" width="334" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                 <color key="textColor" red="0.2949929248" green="0.57325567379999998" blue="0.27422639729999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Di-B1-54c">
-                                <rect key="frame" x="40" y="5" width="57" height="30"/>
+                                <rect key="frame" x="40" y="49" width="57" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
@@ -162,12 +163,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Property ID (Ex. HPBawoItzmm0qsqHGP3X)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rv5-iI-gHD">
-                                <rect key="frame" x="40" y="217.5" width="334" height="34"/>
+                                <rect key="frame" x="40" y="261.5" width="334" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVt-3i-8ou">
-                                <rect key="frame" x="40" y="331.5" width="334" height="50"/>
+                                <rect key="frame" x="40" y="355.5" width="334" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aSq-Jz-led"/>
                                 </constraints>
@@ -176,12 +177,19 @@
                                     <action selector="sendRequestTapped:" destination="KZ0-gW-b2Y" eventType="touchUpInside" id="TrM-DT-k5z"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsC-HT-YNv">
+                                <rect key="frame" x="40" y="435.5" width="334" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qiz-fL-OJI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2Di-B1-54c" firstAttribute="leading" secondItem="Qiz-fL-OJI" secondAttribute="leading" constant="40" id="3ei-s7-1BK"/>
-                            <constraint firstItem="VVt-3i-8ou" firstAttribute="top" secondItem="Rv5-iI-gHD" secondAttribute="bottom" constant="80" id="4Vn-1s-ryS"/>
+                            <constraint firstItem="VVt-3i-8ou" firstAttribute="top" secondItem="Rv5-iI-gHD" secondAttribute="bottom" constant="60" id="4Vn-1s-ryS"/>
+                            <constraint firstItem="DsC-HT-YNv" firstAttribute="top" secondItem="VVt-3i-8ou" secondAttribute="bottom" constant="30" id="6c7-UU-1dR"/>
                             <constraint firstItem="Qiz-fL-OJI" firstAttribute="trailing" secondItem="VVt-3i-8ou" secondAttribute="trailing" constant="40" id="72K-WD-9nn"/>
                             <constraint firstItem="Rv5-iI-gHD" firstAttribute="top" secondItem="GND-4K-rdw" secondAttribute="bottom" constant="40" id="Bx7-TM-YKo"/>
                             <constraint firstItem="GND-4K-rdw" firstAttribute="top" secondItem="Qiz-fL-OJI" secondAttribute="top" constant="150" id="I8f-ks-ff8"/>
@@ -189,13 +197,16 @@
                             <constraint firstItem="Rv5-iI-gHD" firstAttribute="leading" secondItem="Qiz-fL-OJI" secondAttribute="leading" constant="40" id="XTF-Oc-4Ue"/>
                             <constraint firstItem="Qiz-fL-OJI" firstAttribute="trailing" secondItem="GND-4K-rdw" secondAttribute="trailing" constant="40" id="bjB-QT-c7j"/>
                             <constraint firstItem="Qiz-fL-OJI" firstAttribute="trailing" secondItem="Rv5-iI-gHD" secondAttribute="trailing" constant="40" id="cQf-Pt-mU3"/>
+                            <constraint firstItem="DsC-HT-YNv" firstAttribute="leading" secondItem="Qiz-fL-OJI" secondAttribute="leading" constant="40" id="fqe-C6-3I2"/>
                             <constraint firstItem="2Di-B1-54c" firstAttribute="top" secondItem="Qiz-fL-OJI" secondAttribute="top" constant="5" id="huZ-zs-3Ji"/>
                             <constraint firstItem="GND-4K-rdw" firstAttribute="leading" secondItem="Qiz-fL-OJI" secondAttribute="leading" constant="40" id="u31-Lh-Eme"/>
+                            <constraint firstItem="Qiz-fL-OJI" firstAttribute="trailing" secondItem="DsC-HT-YNv" secondAttribute="trailing" constant="40" id="yBd-f1-BM4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="nHQ-nk-rYf"/>
                     <navigationItem key="navigationItem" id="Dgf-P7-xwE"/>
                     <connections>
+                        <outlet property="errorMessageLabel" destination="DsC-HT-YNv" id="ngE-4x-9Y8"/>
                         <outlet property="properyIDTextField" destination="Rv5-iI-gHD" id="tT5-i7-b4B"/>
                         <outlet property="sendRequestButton" destination="VVt-3i-8ou" id="ctT-g4-M7L"/>
                     </connections>
@@ -510,7 +521,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQS-kj-3rK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="yPe-TQ-pb6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="1547.5446428571429"/>
+            <point key="canvasLocation" x="-220" y="1548"/>
         </scene>
         <!--My PropertiesVC-->
         <scene sceneID="jEl-Ch-Xde">
@@ -804,12 +815,28 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="KZ0-gW-b2Y" kind="relationship" relationship="viewControllers" id="vpv-Gu-5ST"/>
+                        <segue destination="YVd-CU-1zA" kind="relationship" relationship="viewControllers" id="ikm-Pg-qsU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71s-ra-aGk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1238" y="820"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="9FI-pz-lQG">
+            <objects>
+                <viewController id="YVd-CU-1zA" customClass="TenantVC" customModule="zeenoc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bRz-np-yZR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3hU-8r-gIm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="kn6-m7-dCW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ne-Ut-gJv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2014" y="820"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

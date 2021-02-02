@@ -86,7 +86,14 @@ class SignUpVC: UIViewController {
                 } else {
                     let db = Firestore.firestore()
                     let user = Auth.auth().currentUser
-                    db.collection("users").document(user!.uid).setData(["firstName": firstName, "lastName": lastName,"email": email, "accountType": self.accountType, "uid": user?.uid as Any])
+                    db.collection("users").document(user!.uid).setData(
+                        ["firstName": firstName,
+                         "lastName": lastName,
+                         "email": email,
+                         "accountType": self.accountType,
+                         "uid": user?.uid as Any,
+                         "paired": "false"
+                        ])
                     
                     //Transition to Home Screen
                     self.transitionToHome()

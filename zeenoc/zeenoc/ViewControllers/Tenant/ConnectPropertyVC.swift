@@ -12,6 +12,7 @@ class ConnectPropertyVC: UIViewController {
 
     @IBOutlet weak var properyIDTextField: UITextField!
     @IBOutlet weak var sendRequestButton: UIButton!
+    @IBOutlet weak var errorMessageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +30,12 @@ class ConnectPropertyVC: UIViewController {
                     "tenant" : uid!,
                     "property" : self.properyIDTextField.text!,
                 ])
+                self.errorMessageLabel.text = "Waiting for landlord to approve request. Please log out and log back in once approved"
+                self.errorMessageLabel.textColor = .blue
+                self.errorMessageLabel.alpha = 1
             } else {
-                print(self.properyIDTextField.text!)
-                print("document not found")
+                self.errorMessageLabel.text = "Property not found"
+                self.errorMessageLabel.alpha = 1
             }
         }
         
