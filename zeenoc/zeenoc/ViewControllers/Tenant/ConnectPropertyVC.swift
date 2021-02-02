@@ -30,6 +30,7 @@ class ConnectPropertyVC: UIViewController {
                     "property" : self.properyIDTextField.text!,
                 ])
             } else {
+                print(self.properyIDTextField.text!)
                 print("document not found")
             }
         }
