@@ -23,21 +23,38 @@ class ConnectPropertyVC: UIViewController {
     @IBAction func sendRequestTapped(_ sender: Any) {
         let db = Firestore.firestore()
         let uid = Auth.auth().currentUser?.uid
-        db.collection("properties").document(properyIDTextField.text!).getDocument { (document, error) in
-            if let document = document, document.exists {
-                let landlord = document.get("landlord") as! String
-                db.collection("users").document(landlord).collection("requests").addDocument(data: [
-                    "tenant" : uid!,
-                    "property" : self.properyIDTextField.text!,
-                ])
-                self.errorMessageLabel.text = "Waiting for landlord to approve request. Please log out and log back in once approved"
-                self.errorMessageLabel.textColor = .blue
-                self.errorMessageLabel.alpha = 1
-            } else {
-                self.errorMessageLabel.text = "Property not found"
-                self.errorMessageLabel.alpha = 1
-            }
+        let docRef = db.collection("users").document(uid!)
+        docRef.getDocument{ (doc, err) in
+            if let doc = doc, doc.exists {
+                let firstName = doc.get("firstName") as! String
+                let lastName = doc.get("lastName") as! String
+                let tenantName = firstName + " " + lastName
+                db.collection("properties").document(self.properyIDTextField.text!).getDocument { (document, error) in
+                        if let document = document, document.exists {
+                            let landlord = document.get("landlord") as! String
+                            let address = document.get("address") as! String
+                            db.collection("users").document(landlord).collection("requests").addDocument(data: [
+                                "tenantID" : uid!,
+                                "propertyID" : self.properyIDTextField.text!,
+                                "address" : address,
+                                "tenantName" : tenantName
+                            ])
+                            self.errorMessageLabel.text = "Waiting for landlord to approve request. Please log out and log back in once approved"
+                            self.errorMessageLabel.textColor = .blue
+                            self.errorMessageLabel.alpha = 1
+                        } else {
+                            self.errorMessageLabel.text = "Property not found"
+                            self.errorMessageLabel.alpha = 1
+                        }
+                    }
+                } else {
+                    print("User document does not exist")
+                }
+            
         }
+        
+        
+        
         
 
      

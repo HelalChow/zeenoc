@@ -81,8 +81,6 @@ class LandlordVC: UIViewController {
     }
  
     func firebaseCall(completion:@escaping([Property], [Property])->()) {
-        var currProperties = [Property]()
-        var currTenantProperties = [Property]()
         let uid = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
         
@@ -130,8 +128,6 @@ class LandlordVC: UIViewController {
                 }
 
             }
-//            properties = currProperties
-//            tenantProperties = currTenantProperties
             DispatchQueue.main.async {
                 completion(properties, tenantProperties)
             }

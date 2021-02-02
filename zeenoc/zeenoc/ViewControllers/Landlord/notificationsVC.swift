@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+
 var requests = [Request]()
 
 class notificationsVC: UIViewController {
@@ -14,8 +16,56 @@ class notificationsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        let anonymousFunction = { (requestList: [Request]) in
+            requests = requestList
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        firebaseCall(completion: anonymousFunction)
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    func firebaseCall(completion:@escaping([Request])->()) {
+        let uid = Auth.auth().currentUser?.uid
+        let db = Firestore.firestore()
+        
+        db.collection("users").document(uid!).collection("requests").addSnapshotListener { (snap, err) in
+            if err != nil {
+                return
+            }
+            for request in snap!.documentChanges {
+                if request.type == .added {
+                    let id = request.document.documentID
+                    let name = request.document.get("tenantName") as! String
+                    let address = request.document.get("address")
+                    print(name)
+                    print(address)
+
+                    requests.append(Request(id: id, tenantName: name, address: address as? String ?? "not working"))
+
+                }
+                if request.type == .removed {
+                    let id = request.document.documentID
+                    for i in 0..<requests.count {
+                        if requests[i].id == id {
+                            requests.remove(at: i)
+//                            if properties.isEmpty {
+//                                self.noData = true
+//                            }
+                            return
+                        }
+                    }
+                }
+
+            }
+            DispatchQueue.main.async {
+                completion(requests)
+            }
+        }
     }
  
 }
