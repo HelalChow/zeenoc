@@ -88,12 +88,16 @@ class notificationsVC: UIViewController {
 
         let id = requests[indexPath.row].id
         let tenant = requests[indexPath.row].tenantID
+        let property = requests[indexPath.row].propertyID
+        let tenantName = requests[indexPath.row].tenantName
+        
         let remove = UIContextualAction(style: .normal, title: "Accept") { (action, view, nil) in
 //            requests.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .left)
            }
         removeRequest(id: id)
-        makePairedTrue(tentantID: tenant)
+        makePairedTrue(tentantID: tenant, propertyID: property)
+        addNameToProperty(tentantID: tenant, tenantName: tenantName, propertyID: property)
         remove.backgroundColor = .blue
         
         let config = UISwipeActionsConfiguration(actions: [remove])
@@ -114,9 +118,15 @@ class notificationsVC: UIViewController {
         }
     }
     
-    func makePairedTrue(tentantID : String){
+    func makePairedTrue(tentantID : String, propertyID: String){
         let db = Firestore.firestore()
-        db.collection("users").document(tentantID).setData(["paired":"true"], merge: true)
+        db.collection("users").document(tentantID).setData(["paired":"true", "properyID": propertyID], merge: true)
+    }
+    
+    func addNameToProperty(tentantID : String, tenantName : String, propertyID: String){
+        let db = Firestore.firestore()
+        let user = Auth.auth().currentUser?.uid
+        db.collection("users").document(user!).collection("properties").document(propertyID).setData(["tenantName":tenantName, "tenantID": tentantID], merge: true)
     }
  
 }

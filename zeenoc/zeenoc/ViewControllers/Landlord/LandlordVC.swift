@@ -98,10 +98,22 @@ class LandlordVC: UIViewController {
                     let bath = property.document.get("bath") as! String
                     let squareFoot = property.document.get("squareFoot") as! String
 
-                    properties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
+                    properties.append(Property(id: id, tenantName: name ?? "N/A", tenantID: "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
 
                     if (name == nil) {
-                        tenantProperties.append(Property(id: id, tenantName: name ?? "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
+                        tenantProperties.append(Property(id: id, tenantName: name ?? "N/A", tenantID: "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
+                    }
+                }
+                if property.type == .modified {
+                    //when modified
+                    let id = property.document.documentID
+                    let tenantName = property.document.get("tenantName") as! String
+                    let tenantID = property.document.get("tenantID") as! String
+                    for i in 0..<properties.count {
+                        if properties[i].id == id {
+                            properties[i].tenantName = tenantName
+                            properties[i].tenantID = tenantID
+                        }
                     }
                 }
                 if property.type == .removed {

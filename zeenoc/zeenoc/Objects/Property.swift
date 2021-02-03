@@ -10,6 +10,7 @@ import Foundation
 struct Property {
     var id: String
     var tenantName: String
+    var tenantID: String
     var address: String
     var deadline: String
     var rent: String
