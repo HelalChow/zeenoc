@@ -50,14 +50,7 @@ class ConnectPropertyVC: UIViewController {
                 } else {
                     print("User document does not exist")
                 }
-            
         }
-        
-        
-        
-        
-
-     
     }
     
     

@@ -11,4 +11,6 @@ struct Request {
     var id: String
     var tenantName: String
     var address: String
+    var tenantID: String
+    var propertyID: String
 }
