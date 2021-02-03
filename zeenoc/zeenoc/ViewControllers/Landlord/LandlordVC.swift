@@ -24,7 +24,6 @@ class LandlordVC: UIViewController {
     var onTimeDataEntry = PieChartDataEntry(value: 0)
     var missedDataEntry = PieChartDataEntry(value: 0)
     var lateDataEntry = PieChartDataEntry(value: 0)
-    
     var numberOfEntries = [PieChartDataEntry]()
     
     override func viewDidLoad() {

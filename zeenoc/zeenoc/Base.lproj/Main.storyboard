@@ -323,10 +323,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xd3-fX-OVb">
-                                <rect key="frame" x="0.0" y="480" width="414" height="416"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xd3-fX-OVb">
+                                <rect key="frame" x="0.0" y="480" width="414" height="279"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="279" id="P8J-K5-tSP"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="WP2-pc-F8U" customClass="PropertyCell" customModule="zeenoc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
@@ -338,9 +340,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1YG-lR-gXx" customClass="PieChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1YG-lR-gXx" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="33" y="156" width="349" height="284"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             </view>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XY7-Dt-1iF">
@@ -350,9 +351,8 @@
                                     <action selector="changeOnTime:" destination="BYZ-38-t0r" eventType="valueChanged" id="oO6-gx-XmP"/>
                                 </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upcoming Rent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVI-SK-88X">
-                                <rect key="frame" x="20" y="448" width="142" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Rent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVI-SK-88X">
+                                <rect key="frame" x="20" y="451" width="142" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -365,9 +365,8 @@
                                     <action selector="logOutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YBf-sO-m6f"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-Sq-s4V">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-Sq-s4V">
                                 <rect key="frame" x="160" y="116" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="changeMissed:" destination="BYZ-38-t0r" eventType="valueChanged" id="wLT-Ok-egz"/>
                                 </connections>
@@ -392,8 +391,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="xd3-fX-OVb" firstAttribute="centerX" secondItem="1YG-lR-gXx" secondAttribute="centerX" id="4dP-QX-BhF"/>
+                            <constraint firstItem="yVI-SK-88X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Apc-XJ-qIP"/>
+                            <constraint firstItem="xd3-fX-OVb" firstAttribute="top" secondItem="yVI-SK-88X" secondAttribute="bottom" constant="5" id="JdL-Nz-mgW"/>
+                            <constraint firstItem="xd3-fX-OVb" firstAttribute="centerX" secondItem="QsS-Sq-s4V" secondAttribute="centerX" id="TD8-ph-JVB"/>
+                            <constraint firstAttribute="trailing" secondItem="xd3-fX-OVb" secondAttribute="trailing" id="iio-aJ-pfB"/>
                             <constraint firstItem="SXi-i5-2mg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="rWn-uy-N0u"/>
+                            <constraint firstItem="xd3-fX-OVb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vUQ-Rn-wGh"/>
                             <constraint firstItem="SXi-i5-2mg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="wwO-eI-W9Q"/>
+                            <constraint firstItem="xd3-fX-OVb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xP7-D3-SlH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Zfy-fr-9FQ"/>
@@ -407,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-220" y="820"/>
+            <point key="canvasLocation" x="-220.28985507246378" y="819.64285714285711"/>
         </scene>
         <!--Add PropertyVC-->
         <scene sceneID="PTb-Qr-udi">
@@ -881,22 +887,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is Tenant View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekd-BJ-rCp">
-                                <rect key="frame" x="154" y="259" width="146" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4p-Oz-vXs">
+                                <rect key="frame" x="40" y="5" width="63" height="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutTapped:" destination="YVd-CU-1zA" eventType="touchUpInside" id="OOq-W3-tgR"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kfr-0v-KPL">
+                                <rect key="frame" x="0.0" y="468" width="414" height="291"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="97" id="wDH-H4-0VM">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="97"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wDH-H4-0VM" id="fhd-77-OgI">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Agi-DV-Phv" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="98" width="374" height="339"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rent Payments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFj-uT-sOg">
+                                <rect key="frame" x="20" y="436" width="138" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5U9-r3-fJD">
+                                <rect key="frame" x="313" y="427" width="81" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Pay Rent"/>
+                                <connections>
+                                    <action selector="payTapped:" destination="YVd-CU-1zA" eventType="touchUpInside" id="Lhi-7k-XnA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3hU-8r-gIm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kfr-0v-KPL" firstAttribute="top" secondItem="5U9-r3-fJD" secondAttribute="bottom" constant="5" id="3gh-VE-g78"/>
+                            <constraint firstItem="e4p-Oz-vXs" firstAttribute="leading" secondItem="3hU-8r-gIm" secondAttribute="leading" constant="40" id="7YO-2c-cfQ"/>
+                            <constraint firstItem="Kfr-0v-KPL" firstAttribute="top" secondItem="xFj-uT-sOg" secondAttribute="bottom" constant="8" id="7bd-9l-Wc4"/>
+                            <constraint firstItem="Kfr-0v-KPL" firstAttribute="leading" secondItem="3hU-8r-gIm" secondAttribute="leading" id="G7W-EK-mzl"/>
+                            <constraint firstItem="e4p-Oz-vXs" firstAttribute="top" secondItem="3hU-8r-gIm" secondAttribute="top" constant="5" id="JVm-SF-f3l"/>
+                            <constraint firstItem="3hU-8r-gIm" firstAttribute="bottom" secondItem="Kfr-0v-KPL" secondAttribute="bottom" id="N7U-Oc-svQ"/>
+                            <constraint firstItem="xFj-uT-sOg" firstAttribute="leading" secondItem="3hU-8r-gIm" secondAttribute="leading" constant="20" id="NPy-UZ-2kO"/>
+                            <constraint firstItem="3hU-8r-gIm" firstAttribute="trailing" secondItem="Kfr-0v-KPL" secondAttribute="trailing" id="nlq-32-jyM"/>
+                            <constraint firstItem="Kfr-0v-KPL" firstAttribute="top" secondItem="e4p-Oz-vXs" secondAttribute="bottom" constant="430" id="pdD-Lm-Xc9"/>
+                            <constraint firstItem="3hU-8r-gIm" firstAttribute="trailing" secondItem="5U9-r3-fJD" secondAttribute="trailing" constant="20" id="zJF-2X-Dme"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="kn6-m7-dCW"/>
+                    <connections>
+                        <outlet property="payButton" destination="5U9-r3-fJD" id="7rV-KP-4O4"/>
+                        <outlet property="pieChartView" destination="Agi-DV-Phv" id="8Oc-11-aec"/>
+                        <outlet property="tableView" destination="Kfr-0v-KPL" id="uZc-nR-1lo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ne-Ut-gJv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2014" y="820"/>
+            <point key="canvasLocation" x="2013.0434782608697" y="819.64285714285711"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -906,6 +963,9 @@
         <image name="trash.fill" catalog="system" width="121" height="128"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
