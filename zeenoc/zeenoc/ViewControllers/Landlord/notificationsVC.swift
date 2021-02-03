@@ -16,6 +16,7 @@ class notificationsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        requests.removeAll()
         
         let anonymousFunction = { (requestList: [Request]) in
             requests = requestList
@@ -93,7 +94,7 @@ class notificationsVC: UIViewController {
         
         let remove = UIContextualAction(style: .normal, title: "Accept") { (action, view, nil) in
 //            requests.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .left)
+            self.tableView.deleteRows(at: [indexPath], with: .right)
            }
         removeRequest(id: id)
         makePairedTrue(tentantID: tenant, propertyID: property)

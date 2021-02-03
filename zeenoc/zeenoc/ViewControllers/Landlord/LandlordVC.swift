@@ -28,6 +28,9 @@ class LandlordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        properties.removeAll()
+        tenantProperties.removeAll()
+        
         let anonymousFunction = { (propertyList: [Property], tenantPropertyList: [Property]) in
             properties = propertyList
             tenantProperties = tenantPropertyList
@@ -50,6 +53,7 @@ class LandlordVC: UIViewController {
         
         numberOfEntries = [onTimeDataEntry, missedDataEntry, lateDataEntry]
         updateChartData()
+        print(tenantProperties)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -98,6 +102,7 @@ class LandlordVC: UIViewController {
                     let bath = property.document.get("bath") as! String
                     let squareFoot = property.document.get("squareFoot") as! String
 
+                    print("appended property")
                     properties.append(Property(id: id, tenantName: name ?? "N/A", tenantID: "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
 
                     if (name != nil) {
@@ -110,26 +115,29 @@ class LandlordVC: UIViewController {
                     let tenantName = property.document.get("tenantName") as! String
                     let tenantID = property.document.get("tenantID") as! String
                     var curr = properties[0]
-                    for i in 0..<properties.count {
-                        if properties[i].id == id {
-                            properties[i].tenantName = tenantName
-                            properties[i].tenantID = tenantID
-                            curr = properties[i]
+                    if tenantName != "N/A" {
+                        for i in 0..<properties.count {
+                            if properties[i].id == id {
+                                properties[i].tenantName = tenantName
+                                properties[i].tenantID = tenantID
+                                curr = properties[i]
+//                               tenantProperties.append(properties[i])
+                            }
+                        }
+                        var exists = false
+                        for i in 0..<tenantProperties.count {
+                            if tenantProperties[i].id == id {
+                                tenantProperties[i].tenantName = tenantName
+                                tenantProperties[i].tenantID = tenantID
+                                exists = true
+                            }
+                        }
+                        if exists == false {
+                            tenantProperties.append(curr)
                         }
                     }
-                    var exists = false
-                    for i in 0..<tenantProperties.count {
-                        if tenantProperties[i].id == id {
-                            tenantProperties[i].tenantName = tenantName
-                            tenantProperties[i].tenantID = tenantID
-                            exists = true
-                        }
-                    }
-                    if exists == false {
-                        tenantProperties.append(curr)
-                    }
-                        
-  
+                    
+                    
                 }
                 if property.type == .removed {
                     let id = property.document.documentID
