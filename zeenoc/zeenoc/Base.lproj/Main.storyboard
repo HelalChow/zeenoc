@@ -340,13 +340,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1YG-lR-gXx" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="33" y="156" width="349" height="284"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1YG-lR-gXx" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="33" y="156" width="348" height="284"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             </view>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XY7-Dt-1iF">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XY7-Dt-1iF">
                                 <rect key="frame" x="20" y="116" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="changeOnTime:" destination="BYZ-38-t0r" eventType="valueChanged" id="oO6-gx-XmP"/>
                                 </connections>
@@ -365,7 +364,7 @@
                                     <action selector="logOutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YBf-sO-m6f"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-Sq-s4V">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-Sq-s4V">
                                 <rect key="frame" x="160" y="116" width="94" height="32"/>
                                 <connections>
                                     <action selector="changeMissed:" destination="BYZ-38-t0r" eventType="valueChanged" id="wLT-Ok-egz"/>
@@ -380,9 +379,8 @@
                                     <segue destination="h6P-Ax-2Zv" kind="showDetail" id="xv5-Hc-Anu"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pBM-Fl-tVw">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pBM-Fl-tVw">
                                 <rect key="frame" x="300" y="116" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="changeLate:" destination="BYZ-38-t0r" eventType="valueChanged" id="AA7-t4-wnD"/>
                                 </connections>
@@ -391,12 +389,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xd3-fX-OVb" firstAttribute="centerX" secondItem="1YG-lR-gXx" secondAttribute="centerX" id="4dP-QX-BhF"/>
                             <constraint firstItem="yVI-SK-88X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Apc-XJ-qIP"/>
                             <constraint firstItem="xd3-fX-OVb" firstAttribute="top" secondItem="yVI-SK-88X" secondAttribute="bottom" constant="5" id="JdL-Nz-mgW"/>
+                            <constraint firstItem="QsS-Sq-s4V" firstAttribute="centerX" secondItem="1YG-lR-gXx" secondAttribute="centerX" id="RcU-AR-rmC"/>
                             <constraint firstItem="xd3-fX-OVb" firstAttribute="centerX" secondItem="QsS-Sq-s4V" secondAttribute="centerX" id="TD8-ph-JVB"/>
+                            <constraint firstItem="1YG-lR-gXx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="VME-E3-JOg"/>
+                            <constraint firstItem="QsS-Sq-s4V" firstAttribute="top" secondItem="XY7-Dt-1iF" secondAttribute="top" id="Z0V-6p-htn"/>
+                            <constraint firstItem="QsS-Sq-s4V" firstAttribute="top" secondItem="pBM-Fl-tVw" secondAttribute="top" id="drd-Rl-go8"/>
+                            <constraint firstItem="QsS-Sq-s4V" firstAttribute="leading" secondItem="XY7-Dt-1iF" secondAttribute="trailing" constant="46" id="i2s-NP-o6T"/>
                             <constraint firstAttribute="trailing" secondItem="xd3-fX-OVb" secondAttribute="trailing" id="iio-aJ-pfB"/>
+                            <constraint firstItem="yVI-SK-88X" firstAttribute="top" secondItem="1YG-lR-gXx" secondAttribute="bottom" constant="11" id="nru-au-mUc"/>
+                            <constraint firstItem="QsS-Sq-s4V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="116" id="oGQ-do-0C8"/>
+                            <constraint firstItem="1YG-lR-gXx" firstAttribute="top" secondItem="QsS-Sq-s4V" secondAttribute="bottom" constant="8" symbolic="YES" id="qZy-wL-88b"/>
                             <constraint firstItem="SXi-i5-2mg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="rWn-uy-N0u"/>
+                            <constraint firstItem="pBM-Fl-tVw" firstAttribute="leading" secondItem="QsS-Sq-s4V" secondAttribute="trailing" constant="46" id="rjs-Vd-TOq"/>
                             <constraint firstItem="xd3-fX-OVb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vUQ-Rn-wGh"/>
                             <constraint firstItem="SXi-i5-2mg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="wwO-eI-W9Q"/>
                             <constraint firstItem="xd3-fX-OVb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xP7-D3-SlH"/>
