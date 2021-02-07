@@ -99,7 +99,9 @@ class notificationsVC: UIViewController {
         removeRequest(id: id)
         makePairedTrue(tentantID: tenant, propertyID: property)
         addNameToProperty(tentantID: tenant, tenantName: tenantName, propertyID: property)
-        remove.backgroundColor = .blue
+        addPaymentToTenant(tentantID: tenant, propertyID: property)
+        
+        remove.backgroundColor = .green
         
         let config = UISwipeActionsConfiguration(actions: [remove])
         config.performsFirstActionWithFullSwipe = true
@@ -128,6 +130,29 @@ class notificationsVC: UIViewController {
         let db = Firestore.firestore()
         let user = Auth.auth().currentUser?.uid
         db.collection("users").document(user!).collection("properties").document(propertyID).setData(["tenantName":tenantName, "tenantID": tentantID], merge: true)
+    }
+    
+    func addPaymentToTenant(tentantID : String, propertyID: String){
+        let db = Firestore.firestore()
+        let user = Auth.auth().currentUser?.uid
+        db.collection("users").document(user!).collection("properties").document(propertyID).getDocument { (doc, err) in
+            if let doc = doc, doc.exists {
+                let deadline = doc.get("deadline") as! String
+                let rent = doc.get("rent") as! String
+                db.collection("users").document(tentantID).collection("payments").addDocument(data: [
+                    "deadline": deadline,
+                    "rent": rent,
+                    "status": "Pending",
+                    "tenantID": tentantID,
+                    "landlordID": user!,
+                    "propertyID": propertyID
+                ])
+
+            } else {
+                print("property doesnt exist")
+            }
+        }
+        
     }
  
 }

@@ -27,6 +27,7 @@
 		1B688C2325C901AA00D722D4 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B688C2225C901AA00D722D4 /* Requests.swift */; };
 		1B688C2925CF891400D722D4 /* PaymentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B688C2725CF891300D722D4 /* PaymentsCell.swift */; };
 		1B688C2A25CF891400D722D4 /* PaymentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B688C2825CF891400D722D4 /* PaymentsCell.xib */; };
+		1B688C2F25D03AB900D722D4 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B688C2E25D03AB900D722D4 /* Payments.swift */; };
 		1B80E1EE258C03B500E96051 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1ED258C03B500E96051 /* StartVC.swift */; };
 		1B80E1F3258C1AD600E96051 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1F2258C1AD600E96051 /* Constants.swift */; };
 		1B80E1F825A3B59300E96051 /* TenantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1F725A3B59300E96051 /* TenantVC.swift */; };
@@ -88,6 +89,7 @@
 		1B688C2225C901AA00D722D4 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		1B688C2725CF891300D722D4 /* PaymentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsCell.swift; sourceTree = "<group>"; };
 		1B688C2825CF891400D722D4 /* PaymentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentsCell.xib; sourceTree = "<group>"; };
+		1B688C2E25D03AB900D722D4 /* Payments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
 		1B80E1ED258C03B500E96051 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		1B80E1F2258C1AD600E96051 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1B80E1F725A3B59300E96051 /* TenantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantVC.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			children = (
 				1B61EDBD2581D23000E259ED /* Property.swift */,
 				1B688C2225C901AA00D722D4 /* Requests.swift */,
+				1B688C2E25D03AB900D722D4 /* Payments.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				1BA3DDBB25BF893200BC2CD2 /* MyPropertiesVC.swift in Sources */,
 				1B61ED2D2581B86A00E259ED /* SceneDelegate.swift in Sources */,
 				1B80E1EE258C03B500E96051 /* StartVC.swift in Sources */,
+				1B688C2F25D03AB900D722D4 /* Payments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

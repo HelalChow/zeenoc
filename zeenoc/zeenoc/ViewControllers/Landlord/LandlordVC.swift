@@ -103,10 +103,10 @@ class LandlordVC: UIViewController {
                     let squareFoot = property.document.get("squareFoot") as! String
 
                     print("appended property")
-                    properties.append(Property(id: id, tenantName: name ?? "N/A", tenantID: "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
+                    properties.append(Property(id: id, tenantName: name ?? "N/A", tenantID: "N/A", address: address, deadline: "03/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
 
                     if (name != nil) {
-                        tenantProperties.append(Property(id: id, tenantName: name ?? "N/A", tenantID: "N/A", address: address, deadline: "12/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
+                        tenantProperties.append(Property(id: id, tenantName: name ?? "N/A", tenantID: "N/A", address: address, deadline: "03/" + deadline + "/2021", rent: "$" + String(rent), room: room + " bds", bath: bath + " ba", squareFoot: squareFoot + " sqft"))
                     }
                 }
                 if property.type == .modified {
