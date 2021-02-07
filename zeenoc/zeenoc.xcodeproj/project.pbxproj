@@ -25,6 +25,8 @@
 		1B688C1725C8F5E900D722D4 /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B688C1525C8F5E900D722D4 /* NotificationsCell.swift */; };
 		1B688C1825C8F5E900D722D4 /* NotificationsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B688C1625C8F5E900D722D4 /* NotificationsCell.xib */; };
 		1B688C2325C901AA00D722D4 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B688C2225C901AA00D722D4 /* Requests.swift */; };
+		1B688C2925CF891400D722D4 /* PaymentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B688C2725CF891300D722D4 /* PaymentsCell.swift */; };
+		1B688C2A25CF891400D722D4 /* PaymentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B688C2825CF891400D722D4 /* PaymentsCell.xib */; };
 		1B80E1EE258C03B500E96051 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1ED258C03B500E96051 /* StartVC.swift */; };
 		1B80E1F3258C1AD600E96051 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1F2258C1AD600E96051 /* Constants.swift */; };
 		1B80E1F825A3B59300E96051 /* TenantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80E1F725A3B59300E96051 /* TenantVC.swift */; };
@@ -84,6 +86,8 @@
 		1B688C1525C8F5E900D722D4 /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
 		1B688C1625C8F5E900D722D4 /* NotificationsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsCell.xib; sourceTree = "<group>"; };
 		1B688C2225C901AA00D722D4 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		1B688C2725CF891300D722D4 /* PaymentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsCell.swift; sourceTree = "<group>"; };
+		1B688C2825CF891400D722D4 /* PaymentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentsCell.xib; sourceTree = "<group>"; };
 		1B80E1ED258C03B500E96051 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		1B80E1F2258C1AD600E96051 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1B80E1F725A3B59300E96051 /* TenantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantVC.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				1BA3DDB425BF838F00BC2CD2 /* MyPropertyCell.xib */,
 				1B688C1525C8F5E900D722D4 /* NotificationsCell.swift */,
 				1B688C1625C8F5E900D722D4 /* NotificationsCell.xib */,
+				1B688C2725CF891300D722D4 /* PaymentsCell.swift */,
+				1B688C2825CF891400D722D4 /* PaymentsCell.xib */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -400,6 +406,7 @@
 			files = (
 				1B61ED372581B86E00E259ED /* LaunchScreen.storyboard in Resources */,
 				1B61ED342581B86E00E259ED /* Assets.xcassets in Resources */,
+				1B688C2A25CF891400D722D4 /* PaymentsCell.xib in Resources */,
 				1BA3DDB625BF838F00BC2CD2 /* MyPropertyCell.xib in Resources */,
 				1B688C1825C8F5E900D722D4 /* NotificationsCell.xib in Resources */,
 				1B61ED862581C99B00E259ED /* PropertyCell.xib in Resources */,
@@ -532,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B688C2925CF891400D722D4 /* PaymentsCell.swift in Sources */,
 				1B688C1725C8F5E900D722D4 /* NotificationsCell.swift in Sources */,
 				1BA3DDC825C0826500BC2CD2 /* PropertyDetailsVC.swift in Sources */,
 				1B083D90258BF78200AB8DAC /* SignUpVC.swift in Sources */,
