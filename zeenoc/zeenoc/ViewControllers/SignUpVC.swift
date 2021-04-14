@@ -85,16 +85,40 @@ class SignUpVC: UIViewController {
                     self.showError(err!.localizedDescription)
                 } else {
                     let db = Firestore.firestore()
-                    let user = Auth.auth().currentUser
-                    db.collection("users").document(user!.uid).setData(
-                        ["firstName": firstName,
+                    let user = Auth.auth().currentUser?.uid as Any
+                    let dictionary = [
+                        "firstName": firstName,
                          "lastName": lastName,
                          "email": email,
                          "accountType": self.accountType,
-                         "uid": user?.uid as Any,
+                         "uid": user,
                          "paired": "false"
-                        ])
-                    
+                    ]
+                    let Url = String(format: "http://192.168.1.213:5000/user")
+                        guard let serviceUrl = URL(string: Url) else { return }
+                        let parameters: [String: Any] = dictionary
+                        var request = URLRequest(url: serviceUrl)
+                        request.httpMethod = "POST"
+                        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+                        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+                            return
+                        }
+                    //request.httpBody = httpBody
+                        request.timeoutInterval = 20
+                        let session = URLSession.shared
+                        session.dataTask(with: request) { (data, response, error) in
+                            if let response = response {
+                                print(response)
+                            }
+                            if let data = data {
+                                do {
+                                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                                    print(json)
+                                } catch {
+                                    print(error)
+                                }
+                            }
+                        }.resume()
                     //Transition to Home Screen
                     self.transitionToHome()
                 }
