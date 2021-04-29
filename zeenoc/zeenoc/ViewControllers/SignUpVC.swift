@@ -81,48 +81,24 @@ class SignUpVC: UIViewController {
 
             //Create User
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-                if err != nil {
-                    self.showError(err!.localizedDescription)
-                } else {
-                    let db = Firestore.firestore()
-                    let user = Auth.auth().currentUser?.uid as Any
-                    let dictionary = [
-                        "firstName": firstName,
-                         "lastName": lastName,
-                         "email": email,
-                         "accountType": self.accountType,
-                         "uid": user,
-                         "paired": "false"
-                    ]
-                    let Url = String(format: "http://192.168.1.213:5000/user")
-                        guard let serviceUrl = URL(string: Url) else { return }
-                        let parameters: [String: Any] = dictionary
-                        var request = URLRequest(url: serviceUrl)
-                        request.httpMethod = "POST"
-                        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-                        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
-                            return
+                            if err != nil {
+                                self.showError(err!.localizedDescription)
+                            } else {
+                                let db = Firestore.firestore()
+                                let user = Auth.auth().currentUser
+                                db.collection("users").document(user!.uid).setData(
+                                    ["firstName": firstName,
+                                     "lastName": lastName,
+                                     "email": email,
+                                     "accountType": self.accountType,
+                                     "uid": user?.uid as Any,
+                                     "paired": "false"
+                                    ])
+                                
+                                //Transition to Home Screen
+                                self.transitionToHome()
+                            }
                         }
-                    //request.httpBody = httpBody
-                        request.timeoutInterval = 20
-                        let session = URLSession.shared
-                        session.dataTask(with: request) { (data, response, error) in
-                            if let response = response {
-                                print(response)
-                            }
-                            if let data = data {
-                                do {
-                                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                                    print(json)
-                                } catch {
-                                    print(error)
-                                }
-                            }
-                        }.resume()
-                    //Transition to Home Screen
-                    self.transitionToHome()
-                }
-            }
 
         }
     }

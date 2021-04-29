@@ -7,7 +7,7 @@ target 'zeenoc' do
 
   # Pods for zeenoc
 	pod 'Firebase/Firestore'
-	pod 'Firebase/Analytics'
+	#pod 'Firebase/Analytics'
 	pod 'Firebase/Auth'
 	pod 'GoogleDataTransport', '5.0.0'
 	pod 'Charts'

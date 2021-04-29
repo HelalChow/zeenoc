@@ -45,13 +45,33 @@ def get_properties():
         dic[pid] = res
     return dic
 
-@app.route('/user/', methods = ["POST"])
-def create_user():
-    data = {"firstname" : "hi", "lastname" : "hi","email": "hi@gmail.com", "accountType": "user", "uid": "abcdefg", "paired": "false"}
-    #print(username)
-    #print(type(username))
+@app.route('/user/<data>', methods = ["POST"])
+def create_user(data): # creating a user in the users collection
+    data = data
     db.collection("users").add(data)
 
+
+@app.route('/property/<data>', methods = ["POST"])
+def create_property(data): # creating a property in the properties collection
+    data = data
+    db.collection("properties").add(data)
+
+@app.route('/property/<data>', methods = ["POST"])
+def add_property_to_landlord(data): # creating a property in the properties collection
+    #data = data
+    #db.collection("properties").add(data)
+
+    db.collection("users").document(data["uid"]).collection("properties").add(data["property_data"])
+
+@app.route('/property/<data>', methods = ["POST"])
+def assign_tenant_to_property(data): # creating a property in the properties collection
+    #data = data
+    #db.collection("properties").add(data)
+    db.collection("users").document(data["uid"]).add({"propertyID": data["propertyID"]})
+
+@app.route('/property/<data>', methods = ["POST"])
+def approve_tenant_to_property(data):
+    
 
 if __name__ == '__main__':
     app.run()
