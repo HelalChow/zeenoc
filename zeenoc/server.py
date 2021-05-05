@@ -45,6 +45,8 @@ def get_properties():
         dic[pid] = res
     return dic
 
+# iOS is sending json "data" object
+
 @app.route('/user/<data>', methods = ["POST"])
 def create_user(data): # creating a user in the users collection
     data = data
@@ -60,7 +62,6 @@ def create_property(data): # creating a property in the properties collection
 def add_property_to_landlord(data): # creating a property in the properties collection
     #data = data
     #db.collection("properties").add(data)
-
     db.collection("users").document(data["uid"]).collection("properties").add(data["property_data"])
 
 @app.route('/property/<data>', methods = ["POST"])
@@ -68,9 +69,6 @@ def assign_tenant_to_property(data): # creating a property in the properties col
     #data = data
     #db.collection("properties").add(data)
     db.collection("users").document(data["uid"]).add({"propertyID": data["propertyID"]})
-
-@app.route('/user/<data>', methods = ["POST"])
-def approve_tenant_to_property(data): #
 
 @app.route('/user/<data>', methods = ["POST"])
 def remove_tenant_from_property(data): # removing a tenant from assigned property
@@ -87,7 +85,7 @@ def remove_payment(data): # removing payment
 
 
 @app.route('/tenant_info/<data>', methods = ["POST"]) #?????
-def request_tenant_info(data): # removing payment
+def request_tenant_info(data): # landlord requests tenant info 
      db.collection("users").document(uid!).collection("requests").add(data)
    
 
